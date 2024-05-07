@@ -18,6 +18,8 @@ local sector1 = section.new_sector('Other', 'Right')
 -- // Elements \\ -- (Type, Name, State, Callback)
 local button = sector.element('Button', 'Reset', nil, function()
 
+    player.character.humanoid.heath = 0
+
 end)
 
 --drum sg
@@ -34,7 +36,14 @@ end)
 
 --lmg
 local button = sector.element('Button', 'LMG', nil, function()
-    
+
+    ---Hlmg----
+    local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+character:MoveTo(Vector3.new(-621.3078, 21.7599, -310.6841))
+---Hlmg----
+
 end)
 
 --DB
@@ -44,7 +53,7 @@ local button = sector.element('Button', 'DB', nil, function()
     local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 
-character:MoveTo(Vector3.new(7.46148682, 53.776207, -851.667725))
+character:MoveTo(Vector3.new(7.482, 61.129, -849.186))
 ---db----
 
 end)
