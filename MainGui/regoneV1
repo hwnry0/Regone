@@ -17,8 +17,8 @@ local sector1 = section.new_sector('Other', 'Right')
 
 -- // Elements \\ -- (Type, Name, State, Callback)
 local button = sector.element('Button', 'Reset', nil, function()
-
-    player.character.humanoid.heath = 0
+    
+    game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0;
 
 end)
 
