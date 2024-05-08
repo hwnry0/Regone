@@ -22,8 +22,9 @@ local button = sector.element('Button', 'Reset', nil, function()
 
 end)
 
---drum sg
-local button = sector.element('Button', 'drum sg', nil, function()
+--DRUM SG
+
+local button = sector.element('Button', 'Drum Shotgun', nil, function()
 
 ---drum----
     local player = game.Players.LocalPlayer
@@ -34,7 +35,8 @@ character:MoveTo(Vector3.new(-1176.82996, 28.6049347, -496.954987))
 
 end)
 
---lmg
+--LMG
+
 local button = sector.element('Button', 'LMG', nil, function()
 
     ---Hlmg----
@@ -47,6 +49,7 @@ character:MoveTo(Vector3.new(-621.3078, 21.7599, -310.6841))
 end)
 
 --DB
+
 local button = sector.element('Button', 'DB', nil, function()
     
     ---db----
@@ -58,7 +61,8 @@ character:MoveTo(Vector3.new(7.482, 61.129, -849.186))
 
 end)
 
---rev
+--REV
+
 local button = sector.element('Button', 'Rev', nil, function()
 
 ---revv----
@@ -67,5 +71,18 @@ local character = player.Character or player.CharacterAdded:Wait()
 
 character:MoveTo(Vector3.new(-665.524719, 48.7515564, -132.125702))
 ---revv----
+
+end)
+
+--BNK
+
+local button = sector.element('Button', 'Bank', nil, function()
+   
+    ---Bank----
+    local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+character:MoveTo(Vector3.new(-396.903748, 50.1464157 -341.917786))
+---Bank----
 
 end)
