@@ -82,7 +82,7 @@ local button = sector.element('Button', 'Bank', nil, function()
     local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 
-character:MoveTo(Vector3.new(-396.903748, 50.1464157 -341.917786))
+character:MoveTo(Vector3.new(-396.8, 49.8, -347.3))
 ---Bank----
 
 end)
