@@ -1,88 +1,324 @@
-local library = loadstring(game:HttpGet('https://raw.githubusercontent.com/cueshut/saves/main/criminality%20paste%20ui%20library'))()
+-- Gui to Lua
+-- Version: 3.2
 
--- // Window \\ --
-local window = library.new('regone', 'Regone')
+-- Instances:
 
--- // Tabs \\ --
-local tab = window.new_tab('rbxassetid://17421600030')
-local tab1 = window.new_tab('rbxassetid://17421591089')
+local Regone = Instance.new("ScreenGui")
+local fps = Instance.new("Frame")
+local fps_label = Instance.new("TextLabel")
+local Logo_Fps = Instance.new("TextLabel")
+local REGONE = Instance.new("Frame")
+local Shop1 = Instance.new("Frame")
+local inner1 = Instance.new("Frame")
+local Main1 = Instance.new("Frame")
+local Regone_1 = Instance.new("TextLabel")
+local Shop2 = Instance.new("Frame")
+local inner1_2 = Instance.new("Frame")
+local Main1_2 = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+local Regone_1_2 = Instance.new("TextLabel")
+local Back1 = Instance.new("TextButton")
+local Next1 = Instance.new("TextButton")
 
--- // Sections \\ --
-local section = tab.new_section('Aimbot')
-local section1 = tab.new_section('Player')
+--Properties:
 
--- // Sector \\ --
-local sector = section.new_sector('Main', 'Left')
-local sector1 = section.new_sector('Other', 'Right')
+Regone.Name = "Regone"
+Regone.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
--- // Elements \\ -- (Type, Name, State, Callback)
-local button = sector.element('Button', 'Reset', nil, function()
-    
-    game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0;
+fps.Name = "fps"
+fps.Parent = Regone
+fps.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+fps.BorderColor3 = Color3.fromRGB(56, 68, 139)
+fps.BorderSizePixel = 2
+fps.LayoutOrder = 100
+fps.Position = UDim2.new(0.591897249, 0, 0.0117647285, 0)
+fps.Size = UDim2.new(0, 211, 0, 22)
 
-end)
+fps_label.Name = "fps_label"
+fps_label.Parent = fps
+fps_label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+fps_label.BackgroundTransparency = 1.000
+fps_label.Position = UDim2.new(0.497630328, 0, 0.873191118, 0)
+fps_label.Size = UDim2.new(0.27960667, 0, -0.782280684, 0)
+fps_label.Font = Enum.Font.Code
+fps_label.Text = "0 FPS"
+fps_label.TextColor3 = Color3.fromRGB(255, 255, 255)
+fps_label.TextScaled = true
+fps_label.TextSize = 14.000
+fps_label.TextStrokeTransparency = 0.500
+fps_label.TextWrapped = true
+fps_label.TextXAlignment = Enum.TextXAlignment.Right
 
---DRUM SG
+Logo_Fps.Name = "Logo_Fps"
+Logo_Fps.Parent = fps
+Logo_Fps.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Logo_Fps.BackgroundTransparency = 1.000
+Logo_Fps.Position = UDim2.new(0.0284360182, 0, 0.873191118, 0)
+Logo_Fps.Size = UDim2.new(0.327000082, 0, -0.782280684, 0)
+Logo_Fps.Font = Enum.Font.Code
+Logo_Fps.Text = "Regone"
+Logo_Fps.TextColor3 = Color3.fromRGB(255, 255, 255)
+Logo_Fps.TextScaled = true
+Logo_Fps.TextSize = 14.000
+Logo_Fps.TextStrokeTransparency = 0.500
+Logo_Fps.TextWrapped = true
+Logo_Fps.TextXAlignment = Enum.TextXAlignment.Left
 
-local button = sector.element('Button', 'Drum Shotgun', nil, function()
+REGONE.Name = "REGONE"
+REGONE.Parent = Regone
+REGONE.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+REGONE.BorderColor3 = Color3.fromRGB(56, 68, 139)
+REGONE.BorderSizePixel = 0
+REGONE.LayoutOrder = 100
+REGONE.Position = UDim2.new(0.324239999, 0, 0.144117609, 0)
+REGONE.Size = UDim2.new(0, 423, 0, 21)
 
----drum----
-    local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
+Shop1.Name = "Shop1"
+Shop1.Parent = REGONE
+Shop1.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+Shop1.BorderColor3 = Color3.fromRGB(56, 68, 139)
+Shop1.BorderSizePixel = 2
+Shop1.LayoutOrder = 100
+Shop1.Position = UDim2.new(-0.0018524098, 0, -0.00107293378, 0)
+Shop1.Size = UDim2.new(0, 423, 0, 551)
 
-character:MoveTo(Vector3.new(-1176.82996, 28.6049347, -496.954987))
----drum---- 
+inner1.Name = "inner1"
+inner1.Parent = Shop1
+inner1.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+inner1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+inner1.Position = UDim2.new(0.0236405171, 0, 0.0399274044, 0)
+inner1.Size = UDim2.new(0, 403, 0, 517)
 
-end)
+Main1.Name = "Main1"
+Main1.Parent = inner1
+Main1.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+Main1.BorderColor3 = Color3.fromRGB(81, 81, 81)
+Main1.LayoutOrder = 123133
+Main1.Position = UDim2.new(0.0223325826, 0, 0.0564012639, 0)
+Main1.Size = UDim2.new(0, 385, 0, 480)
 
---LMG
+Regone_1.Name = "Regone_1"
+Regone_1.Parent = Shop1
+Regone_1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Regone_1.BackgroundTransparency = 1.000
+Regone_1.Position = UDim2.new(0.0213438347, 0, 0.0399274044, 0)
+Regone_1.Size = UDim2.new(0.215888992, 0, -0.0399274081, 0)
+Regone_1.Font = Enum.Font.Code
+Regone_1.Text = "Regone"
+Regone_1.TextColor3 = Color3.fromRGB(255, 255, 255)
+Regone_1.TextSize = 13.000
+Regone_1.TextStrokeTransparency = 0.500
+Regone_1.TextXAlignment = Enum.TextXAlignment.Left
 
-local button = sector.element('Button', 'LMG', nil, function()
+Shop2.Name = "Shop2"
+Shop2.Parent = REGONE
+Shop2.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+Shop2.BorderColor3 = Color3.fromRGB(56, 68, 139)
+Shop2.BorderSizePixel = 2
+Shop2.LayoutOrder = 100
+Shop2.Position = UDim2.new(-0.00221126177, 0, -0.00107293378, 0)
+Shop2.Size = UDim2.new(0, 423, 0, 551)
+Shop2.Visible = false
 
-    ---Hlmg----
-    local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
+inner1_2.Name = "inner1"
+inner1_2.Parent = Shop2
+inner1_2.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+inner1_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+inner1_2.Position = UDim2.new(0.0236406624, 0, 0.0399274044, 0)
+inner1_2.Size = UDim2.new(0, 403, 0, 517)
 
-character:MoveTo(Vector3.new(-621.3078, 21.7599, -310.6841))
----Hlmg----
+Main1_2.Name = "Main1"
+Main1_2.Parent = inner1_2
+Main1_2.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+Main1_2.BorderColor3 = Color3.fromRGB(81, 81, 81)
+Main1_2.LayoutOrder = 123133
+Main1_2.Position = UDim2.new(0.0223325826, 0, 0.0564012639, 0)
+Main1_2.Size = UDim2.new(0, 385, 0, 480)
 
-end)
+TextButton.Parent = Main1_2
+TextButton.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+TextButton.BorderColor3 = Color3.fromRGB(56, 68, 139)
+TextButton.Position = UDim2.new(0.0155844158, 0, 0.0145833334, 0)
+TextButton.Size = UDim2.new(0, 157, 0, 24)
+TextButton.Font = Enum.Font.Code
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextSize = 14.000
 
---DB
+Regone_1_2.Name = "Regone_1"
+Regone_1_2.Parent = Shop2
+Regone_1_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Regone_1_2.BackgroundTransparency = 1.000
+Regone_1_2.Position = UDim2.new(0.0213438347, 0, 0.0399274044, 0)
+Regone_1_2.Size = UDim2.new(0.215888992, 0, -0.0399274081, 0)
+Regone_1_2.Font = Enum.Font.Code
+Regone_1_2.Text = "Regone"
+Regone_1_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Regone_1_2.TextSize = 13.000
+Regone_1_2.TextStrokeTransparency = 0.500
+Regone_1_2.TextXAlignment = Enum.TextXAlignment.Left
 
-local button = sector.element('Button', 'DB', nil, function()
-    
-    ---db----
-    local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
+Back1.Name = "Back1"
+Back1.Parent = REGONE
+Back1.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+Back1.BorderColor3 = Color3.fromRGB(81, 81, 81)
+Back1.LayoutOrder = 6
+Back1.Position = UDim2.new(0, 18, 0, 30)
+Back1.Size = UDim2.new(0, 83, 0, 19)
+Back1.Font = Enum.Font.Code
+Back1.Text = "Main"
+Back1.TextColor3 = Color3.fromRGB(255, 255, 255)
+Back1.TextSize = 14.000
 
-character:MoveTo(Vector3.new(7.482, 61.129, -849.186))
----db----
+Next1.Name = "Next1"
+Next1.Parent = REGONE
+Next1.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+Next1.BorderColor3 = Color3.fromRGB(81, 81, 81)
+Next1.LayoutOrder = 6
+Next1.Position = UDim2.new(0, 100, 0, 30)
+Next1.Size = UDim2.new(0, 82, 0, 19)
+Next1.Font = Enum.Font.Code
+Next1.Text = "Settings"
+Next1.TextColor3 = Color3.fromRGB(255, 255, 255)
+Next1.TextSize = 14.000
 
-end)
+-- Scripts:
 
---REV
+-- fps_label.LocalScript is disabled.
+local function KWEODJ_fake_script() -- fps_label.FpsCounter 
+	local script = Instance.new('Script', fps_label)
 
-local button = sector.element('Button', 'Rev', nil, function()
+	local RS = game:GetService("RunService")
+	local frames = 0
+	
+	RS.RenderStepped:Connect(function()
+		frames = frames + 1
+	end)
+	
+	while wait(1) do
+		script.Parent.Text = frames .. " FPS"
+		frames = 0
+	end
+end
+coroutine.wrap(KWEODJ_fake_script)()
+local function QTMRMGN_fake_script() -- fps.DragFps 
+	local script = Instance.new('Script', fps)
 
----revv----
-    local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
+	local UserInputService = game:GetService("UserInputService")
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	end
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(QTMRMGN_fake_script)()
+local function BOTSGY_fake_script() -- TextButton.Test 
+	local script = Instance.new('Script', TextButton)
 
-character:MoveTo(Vector3.new(-665.524719, 48.7515564, -132.125702))
----revv----
+	function Test()
+		print("5/13/24")
+	end
+	
+	script.Parent.MouseButton1Click:connect(Test)
+end
+coroutine.wrap(BOTSGY_fake_script)()
+local function SPFMNU_fake_script() -- Back1.Script 
+	local script = Instance.new('Script', Back1)
 
-end)
+	function sure()
+	script.Parent.Parent.Shop1.Visible = true
+	script.Parent.Parent.Shop2.Visible = false
+	end
+	
+	script.Parent.MouseButton1Click:connect(sure)
+	
+end
+coroutine.wrap(SPFMNU_fake_script)()
+local function DQQH_fake_script() -- Next1.Script 
+	local script = Instance.new('Script', Next1)
 
---BNK
+	function sure()
+	script.Parent.Parent.Shop1.Visible = false
+	script.Parent.Parent.Shop2.Visible = true
+	end
+	
+	script.Parent.MouseButton1Click:connect(sure)
+	
+end
+coroutine.wrap(DQQH_fake_script)()
+local function NRFEDG_fake_script() -- REGONE.DragMain 
+	local script = Instance.new('Script', REGONE)
 
-local button = sector.element('Button', 'Bank', nil, function()
-   
-    ---Bank----
-    local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-
-character:MoveTo(Vector3.new(-396.8, 49.8, -347.3))
----Bank----
-
-end)
+	local UserInputService = game:GetService("UserInputService")
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	end
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(NRFEDG_fake_script)()
