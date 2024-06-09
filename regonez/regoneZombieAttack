@@ -1,0 +1,502 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local RegoneMain = Instance.new("ScreenGui")
+local Regone = Instance.new("Frame")
+local TopBar = Instance.new("TextLabel")
+local FpsDisplay = Instance.new("TextLabel")
+local DestroyButton = Instance.new("TextButton")
+local FirstFrame = Instance.new("Frame")
+local Seccondframe = Instance.new("Frame")
+local _1Area = Instance.new("Frame")
+local AutoFarm = Instance.new("TextButton")
+local SpinBot = Instance.new("TextButton")
+local TopText1 = Instance.new("TextLabel")
+local _2Area = Instance.new("Frame")
+local AntiAFK = Instance.new("TextButton")
+local TopText1_2 = Instance.new("TextLabel")
+local IteamChecker = Instance.new("TextButton")
+local OptiButton = Instance.new("TextButton")
+local CoverUp = Instance.new("Frame")
+
+--Properties:
+
+RegoneMain.Name = "RegoneMain"
+RegoneMain.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+RegoneMain.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+RegoneMain.ResetOnSpawn = false
+
+Regone.Name = "Regone"
+Regone.Parent = RegoneMain
+Regone.BackgroundColor3 = Color3.fromRGB(51, 51, 51)
+Regone.BorderColor3 = Color3.fromRGB(36, 175, 21)
+Regone.LayoutOrder = 1
+Regone.Position = UDim2.new(0.503725052, 0, 0.248390317, 0)
+Regone.Size = UDim2.new(0, 438, 0, 22)
+
+TopBar.Name = "TopBar"
+TopBar.Parent = Regone
+TopBar.BackgroundColor3 = Color3.fromRGB(84, 84, 84)
+TopBar.BackgroundTransparency = 1.000
+TopBar.BorderColor3 = Color3.fromRGB(28, 135, 16)
+TopBar.Position = UDim2.new(-0.0565454662, 0, 0.0529091582, 0)
+TopBar.Size = UDim2.new(0, 126, 0, 19)
+TopBar.Font = Enum.Font.Code
+TopBar.Text = "regone ┃"
+TopBar.TextColor3 = Color3.fromRGB(255, 255, 255)
+TopBar.TextSize = 14.000
+TopBar.TextWrapped = true
+
+FpsDisplay.Name = "FpsDisplay"
+FpsDisplay.Parent = Regone
+FpsDisplay.BackgroundColor3 = Color3.fromRGB(84, 84, 84)
+FpsDisplay.BackgroundTransparency = 1.000
+FpsDisplay.BorderColor3 = Color3.fromRGB(28, 135, 16)
+FpsDisplay.Position = UDim2.new(0.0798181742, 0, 0.0529091582, 0)
+FpsDisplay.Size = UDim2.new(0, 126, 0, 19)
+FpsDisplay.Font = Enum.Font.Code
+FpsDisplay.Text = "Fps"
+FpsDisplay.TextColor3 = Color3.fromRGB(255, 255, 255)
+FpsDisplay.TextSize = 14.000
+FpsDisplay.TextWrapped = true
+
+DestroyButton.Name = "DestroyButton"
+DestroyButton.Parent = Regone
+DestroyButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DestroyButton.BackgroundTransparency = 1.000
+DestroyButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DestroyButton.BorderSizePixel = 0
+DestroyButton.Position = UDim2.new(0.86027056, 0, 0.0529091582, 0)
+DestroyButton.Size = UDim2.new(0, 50, 0, 18)
+DestroyButton.Font = Enum.Font.Code
+DestroyButton.Text = "Destroy"
+DestroyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+DestroyButton.TextSize = 14.000
+
+FirstFrame.Name = "FirstFrame"
+FirstFrame.Parent = Regone
+FirstFrame.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+FirstFrame.BorderColor3 = Color3.fromRGB(36, 175, 21)
+FirstFrame.LayoutOrder = 2
+FirstFrame.Position = UDim2.new(-0.00254206569, 1, 0.980787814, 0)
+FirstFrame.Size = UDim2.new(0, 438, 0, 543)
+
+Seccondframe.Name = "Seccond frame"
+Seccondframe.Parent = FirstFrame
+Seccondframe.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+Seccondframe.BorderColor3 = Color3.fromRGB(36, 175, 21)
+Seccondframe.Position = UDim2.new(0.0183412042, 0, 0.0118281189, 0)
+Seccondframe.Size = UDim2.new(0, 420, 0, 524)
+
+_1Area.Name = "1Area"
+_1Area.Parent = Seccondframe
+_1Area.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+_1Area.BorderColor3 = Color3.fromRGB(36, 175, 21)
+_1Area.Position = UDim2.new(0.0278650187, 0, 0.0231050346, 0)
+_1Area.Size = UDim2.new(0, 193, 0, 258)
+
+AutoFarm.Name = "AutoFarm"
+AutoFarm.Parent = _1Area
+AutoFarm.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+AutoFarm.BorderColor3 = Color3.fromRGB(28, 135, 16)
+AutoFarm.Position = UDim2.new(0.0782198757, 0, 0.0621618219, 0)
+AutoFarm.Size = UDim2.new(0, 161, 0, 23)
+AutoFarm.Font = Enum.Font.SourceSans
+AutoFarm.Text = "AutoFarm"
+AutoFarm.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoFarm.TextSize = 14.000
+
+SpinBot.Name = "SpinBot"
+SpinBot.Parent = _1Area
+SpinBot.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+SpinBot.BorderColor3 = Color3.fromRGB(28, 135, 16)
+SpinBot.Position = UDim2.new(0.0782198757, 0, 0.186192825, 0)
+SpinBot.Size = UDim2.new(0, 161, 0, 23)
+SpinBot.Font = Enum.Font.SourceSans
+SpinBot.Text = "SpinBot"
+SpinBot.TextColor3 = Color3.fromRGB(255, 255, 255)
+SpinBot.TextSize = 14.000
+
+TopText1.Name = "TopText1"
+TopText1.Parent = _1Area
+TopText1.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+TopText1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TopText1.BorderSizePixel = 0
+TopText1.Position = UDim2.new(0.0490001626, 0, -0.0400000289, 0)
+TopText1.Size = UDim2.new(0, 42, 0, 19)
+TopText1.Font = Enum.Font.Code
+TopText1.Text = "main"
+TopText1.TextColor3 = Color3.fromRGB(255, 255, 255)
+TopText1.TextSize = 14.000
+TopText1.TextWrapped = true
+
+_2Area.Name = "2Area"
+_2Area.Parent = Seccondframe
+_2Area.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+_2Area.BorderColor3 = Color3.fromRGB(36, 175, 21)
+_2Area.Position = UDim2.new(0.513579309, 0, 0.0231050346, 0)
+_2Area.Size = UDim2.new(0, 193, 0, 258)
+
+AntiAFK.Name = "Anti AFK"
+AntiAFK.Parent = _2Area
+AntiAFK.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+AntiAFK.BorderColor3 = Color3.fromRGB(28, 135, 16)
+AntiAFK.Position = UDim2.new(0.0782195553, 0, 0.0621618219, 0)
+AntiAFK.Size = UDim2.new(0, 161, 0, 23)
+AntiAFK.Font = Enum.Font.SourceSans
+AntiAFK.Text = "Optimize"
+AntiAFK.TextColor3 = Color3.fromRGB(255, 255, 255)
+AntiAFK.TextSize = 14.000
+
+TopText1_2.Name = "TopText1"
+TopText1_2.Parent = _2Area
+TopText1_2.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+TopText1_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TopText1_2.BorderSizePixel = 0
+TopText1_2.Position = UDim2.new(0.0490001626, 0, -0.0400000289, 0)
+TopText1_2.Size = UDim2.new(0, 42, 0, 19)
+TopText1_2.Font = Enum.Font.Code
+TopText1_2.Text = "other"
+TopText1_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TopText1_2.TextSize = 14.000
+TopText1_2.TextWrapped = true
+
+IteamChecker.Name = "IteamChecker"
+IteamChecker.Parent = _2Area
+IteamChecker.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+IteamChecker.BorderColor3 = Color3.fromRGB(28, 135, 16)
+IteamChecker.Position = UDim2.new(0.0782198757, 0, 0.186192825, 0)
+IteamChecker.Size = UDim2.new(0, 161, 0, 23)
+IteamChecker.Font = Enum.Font.SourceSans
+IteamChecker.Text = "Auto Gun (must be in 2 slot)"
+IteamChecker.TextColor3 = Color3.fromRGB(255, 255, 255)
+IteamChecker.TextSize = 14.000
+
+OptiButton.Name = "OptiButton"
+OptiButton.Parent = _2Area
+OptiButton.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+OptiButton.BorderColor3 = Color3.fromRGB(28, 135, 16)
+OptiButton.Position = UDim2.new(0.0782198757, 0, 0.310223848, 0)
+OptiButton.Size = UDim2.new(0, 161, 0, 23)
+OptiButton.Font = Enum.Font.SourceSans
+OptiButton.Text = "Optimize"
+OptiButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+OptiButton.TextSize = 14.000
+
+CoverUp.Name = "CoverUp"
+CoverUp.Parent = FirstFrame
+CoverUp.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+CoverUp.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CoverUp.BorderSizePixel = 0
+CoverUp.Position = UDim2.new(0, 0, -0.0044444385, 0)
+CoverUp.Size = UDim2.new(0, 438, 0, 2)
+
+-- Scripts:
+
+local function JRQSD_fake_script() -- FpsDisplay.Script 
+	local script = Instance.new('Script', FpsDisplay)
+
+	local RS = game:GetService("RunService")
+	local frames = 0
+	
+	RS.RenderStepped:Connect(function()
+		frames = frames + 1
+	end)
+	
+	while wait(1) do
+		script.Parent.Text = frames .. " Fps"
+		frames = 0
+	end
+end
+coroutine.wrap(JRQSD_fake_script)()
+local function JAWG_fake_script() -- DestroyButton.DestroyScript 
+	local script = Instance.new('Script', DestroyButton)
+
+	local Button = script.Parent
+	
+	Button.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent:Destroy() 
+	end)
+end
+coroutine.wrap(JAWG_fake_script)()
+local function JFLMYFE_fake_script() -- Regone.DragScript 
+	local script = Instance.new('Script', Regone)
+
+	local UserInputService = game:GetService("UserInputService")
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	end
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(JFLMYFE_fake_script)()
+local function UFINVRA_fake_script() -- AutoFarm.AutoFarmScript 
+	local script = Instance.new('Script', AutoFarm)
+
+	local Button = script.Parent
+	
+	Button.MouseButton1Click:connect(function()
+		local groundDistance = 15
+		local Player = game:GetService("Players").LocalPlayer
+		local function getNearest()
+			local nearest, dist = nil, 99999
+			for _,v in pairs(game.Workspace.BossFolder:GetChildren()) do
+				if(v:FindFirstChild("Head")~=nil)then
+					local m =(Player.Character.Head.Position-v.Head.Position).magnitude
+					if(m<dist)then
+						dist = m
+						nearest = v
+					end
+				end
+			end
+			for _,v in pairs(game.Workspace.enemies:GetChildren()) do
+				if(v:FindFirstChild("Head")~=nil)then
+					local m =(Player.Character.Head.Position-v.Head.Position).magnitude
+					if(m<dist)then
+						dist = m
+						nearest = v
+					end
+				end
+			end
+			return nearest
+		end
+		_G.farm2 = true
+		Player.Chatted:Connect(function(m)
+			if(m==";autofarm false")then
+				_G.farm2 = false
+			elseif(m==";autofarm true")then
+				_G.farm2 = true
+			end
+		end)
+		_G.globalTarget = nil
+		game:GetService("RunService").RenderStepped:Connect(function()
+			if(_G.farm2==true)then
+				local target = getNearest()
+				if(target~=nil)then
+					game:GetService("Workspace").CurrentCamera.CFrame = CFrame.new(game:GetService("Workspace").CurrentCamera.CFrame.p, target.Head.Position)
+					Player.Character.HumanoidRootPart.CFrame = (target.HumanoidRootPart.CFrame * CFrame.new(0, groundDistance, 15))
+					_G.globalTarget = target
+				end
+			end
+		end)
+		spawn(function()
+			while wait() do
+				game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+				game.Players.LocalPlayer.Character.Torso.Velocity = Vector3.new(0,0,0)
+			end
+		end)
+		while wait() do
+			if(_G.farm2==true and _G.globalTarget~=nil and _G.globalTarget:FindFirstChild("Head") and Player.Character:FindFirstChildOfClass("Tool"))then
+				local target = _G.globalTarget
+				game.ReplicatedStorage.Gun:FireServer({["Normal"] = Vector3.new(0, 0, 0), ["Direction"] = target.Head.Position, ["Name"] = Player.Character:FindFirstChildOfClass("Tool").Name, ["Hit"] = target.Head, ["Origin"] = target.Head.Position, ["Pos"] = target.Head.Position,})
+				wait()
+			end
+		end
+	end)
+end
+coroutine.wrap(UFINVRA_fake_script)()
+local function IXCZCOZ_fake_script() -- SpinBot.Spinner 
+	local script = Instance.new('Script', SpinBot)
+
+	local switchActivated = false -- Initially, the switch is deactivated
+	
+	function Spina()
+		if not switchActivated then
+			switchActivated = true
+			script.Parent.Text = "SpinBot ON" -- Change the button text to indicate it's now a switch off button
+			--makes player beable to use shiftylock
+			game:GetService("Players").LocalPlayer.Character.Humanoid.AutoRotate = false
+			-- Execute your function
+			power = 900 -- change this to make it more or less powerful
+			wait(.1)
+			local Spinner = Instance.new("BodyThrust")
+			Spinner.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+			Spinner.Force = Vector3.new(power,0,power)
+			Spinner.Location = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+	
+		else
+			switchActivated = false
+			script.Parent.Text = "SpinBot OFF" -- Change the button text to indicate it's now a switch on button
+			-- Deactivate the function (you might want to remove the spinning)
+	
+			game:GetService("Players").LocalPlayer.Character.Humanoid.AutoRotate = true
+			-- Example: stop all BodyThrust instances
+			for _, bodyThrust in ipairs(game.Players.LocalPlayer.Character.HumanoidRootPart:GetChildren()) do
+				if bodyThrust:IsA("BodyThrust") then
+					bodyThrust:Destroy()
+				end
+			end
+		end
+	end
+	
+	script.Parent.MouseButton1Click:Connect(Spina)
+	
+end
+coroutine.wrap(IXCZCOZ_fake_script)()
+local function JSCNMK_fake_script() -- AntiAFK.AntiAFK 
+	local script = Instance.new('Script', AntiAFK)
+
+	local opti = script.Parent
+	
+	opti.MouseButton1Click:Connect(function()
+		local decalsyeeted = true 
+		local g = game
+		local w = g.Workspace
+		local l = g.Lighting
+		local t = w.Terrain
+		t.WaterWaveSize = 0
+		t.WaterWaveSpeed = 0
+		t.WaterReflectance = 0
+		t.WaterTransparency = 0
+		l.GlobalShadows = false
+		l.FogEnd = 9e9
+		l.Brightness = 0
+		settings().Rendering.QualityLevel = "Level01"
+		for i,v in pairs(g:GetDescendants()) do
+			if v:IsA("Part") or v:IsA("Union") or v:IsA("MeshPart") then
+				v.Material = "Plastic"
+				v.Reflectance = 0
+			elseif v:IsA("Decal") and decalsyeeted then 
+				v.Transparency = 1
+			elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then 
+				v.Lifetime = NumberRange.new(0)
+			end
+		end
+	end)
+end
+coroutine.wrap(JSCNMK_fake_script)()
+local function XLJSCKG_fake_script() -- IteamChecker.AutoGun 
+	local script = Instance.new('Script', IteamChecker)
+
+	local player = game.Players.LocalPlayer
+	local backpack = player.Backpack
+	
+	local function deleteOmegaScytheAndEquipOther()
+		-- Find the "Omega Scythe" tool in the backpack
+		local omegaScythe
+		for _, tool in ipairs(backpack:GetChildren()) do
+			if tool:IsA("Tool") and tool.Name == "Omega Scythe" then
+				omegaScythe = tool
+				break
+			end
+		end
+	
+		-- If the "Omega Scythe" is found, delete it
+		if omegaScythe then
+			omegaScythe:Destroy()
+		end
+	
+		-- Find the first non-"Omega Scythe" tool in the backpack
+		local toolToEquip
+		for _, tool in ipairs(backpack:GetChildren()) do
+			if tool:IsA("Tool") and tool.Name ~= "Omega Scythe" then
+				toolToEquip = tool
+				break
+			end
+		end
+	
+		-- If a non-"Omega Scythe" tool is found, equip it
+		if toolToEquip then
+			player.Character.Humanoid:EquipTool(toolToEquip)
+		end
+	end
+	
+	-- Call the function every 3 minutes
+	while true do
+		deleteOmegaScytheAndEquipOther()
+		wait(120) -- 3 minutes in seconds
+	end
+	
+end
+coroutine.wrap(XLJSCKG_fake_script)()
+local function ORPU_fake_script() -- OptiButton.Optimizer 
+	local script = Instance.new('Script', OptiButton)
+
+	local opti = script.Parent
+	
+	opti.MouseButton1Click:Connect(function()
+		local decalsyeeted = true 
+		local g = game
+		local w = g.Workspace
+		local l = g.Lighting
+		local t = w.Terrain
+		t.WaterWaveSize = 0
+		t.WaterWaveSpeed = 0
+		t.WaterReflectance = 0
+		t.WaterTransparency = 0
+		l.GlobalShadows = false
+		l.FogEnd = 9e9
+		l.Brightness = 0
+		settings().Rendering.QualityLevel = "Level01"
+		for i,v in pairs(g:GetDescendants()) do
+			if v:IsA("Part") or v:IsA("Union") or v:IsA("MeshPart") then
+				v.Material = "Plastic"
+				v.Reflectance = 0
+			elseif v:IsA("Decal") and decalsyeeted then 
+				v.Transparency = 1
+			elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then 
+				v.Lifetime = NumberRange.new(0)
+			end
+		end
+	end)
+end
+coroutine.wrap(ORPU_fake_script)()
+local function WILSOHU_fake_script() -- Regone.Keybind 
+	local script = Instance.new('Script', Regone)
+
+	-- Get the UI frame you want to toggle
+	local player = game.Players.LocalPlayer
+	local frame = player.PlayerGui.RegoneMain.Regone
+	
+	-- Create a boolean variable to track the visibility state
+	local isVisible = true
+	
+	-- Connect a function to the UserInputService's InputBegan event
+	game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
+		-- Check if the input is the "V" key and the game didn't process the input
+		if input.KeyCode == Enum.KeyCode.V and not gameProcessedEvent then
+			-- Toggle the visibility state
+			isVisible = not isVisible
+	
+			-- Set the frame's visibility based on the new state
+			frame.Visible = isVisible
+		end
+	end)
+	
+end
+coroutine.wrap(WILSOHU_fake_script)()
