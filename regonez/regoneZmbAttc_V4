@@ -195,7 +195,7 @@ CoverUp.Size = UDim2.new(0, 438, 0, 2)
 
 -- Scripts:
 
-local function ZNSSZI_fake_script() -- FpsDisplay.Script 
+local function FYKNTO_fake_script() -- FpsDisplay.Script 
 	local script = Instance.new('Script', FpsDisplay)
 
 	local RS = game:GetService("RunService")
@@ -210,8 +210,8 @@ local function ZNSSZI_fake_script() -- FpsDisplay.Script
 		frames = 0
 	end
 end
-coroutine.wrap(ZNSSZI_fake_script)()
-local function EFZZTXU_fake_script() -- DestroyButton.DestroyScript 
+coroutine.wrap(FYKNTO_fake_script)()
+local function GPMO_fake_script() -- DestroyButton.DestroyScript 
 	local script = Instance.new('Script', DestroyButton)
 
 	local Button = script.Parent
@@ -220,8 +220,8 @@ local function EFZZTXU_fake_script() -- DestroyButton.DestroyScript
 		script.Parent.Parent.Parent:Destroy() 
 	end)
 end
-coroutine.wrap(EFZZTXU_fake_script)()
-local function PUBBMXQ_fake_script() -- Regone.DragScript 
+coroutine.wrap(GPMO_fake_script)()
+local function TLKTPF_fake_script() -- Regone.DragScript 
 	local script = Instance.new('Script', Regone)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -264,8 +264,8 @@ local function PUBBMXQ_fake_script() -- Regone.DragScript
 		end
 	end)
 end
-coroutine.wrap(PUBBMXQ_fake_script)()
-local function CCYUZ_fake_script() -- AutoFarm.AutoFarmScript 
+coroutine.wrap(TLKTPF_fake_script)()
+local function NWVX_fake_script() -- AutoFarm.AutoFarmScript 
 	local script = Instance.new('Script', AutoFarm)
 
 	local Button = script.Parent
@@ -329,8 +329,8 @@ local function CCYUZ_fake_script() -- AutoFarm.AutoFarmScript
 		end
 	end)
 end
-coroutine.wrap(CCYUZ_fake_script)()
-local function JZEZ_fake_script() -- SpinBot.Spinner 
+coroutine.wrap(NWVX_fake_script)()
+local function CVSCH_fake_script() -- SpinBot.Spinner 
 	local script = Instance.new('Script', SpinBot)
 
 	local switchActivated = false -- Initially, the switch is deactivated
@@ -367,8 +367,8 @@ local function JZEZ_fake_script() -- SpinBot.Spinner
 	script.Parent.MouseButton1Click:Connect(Spina)
 	
 end
-coroutine.wrap(JZEZ_fake_script)()
-local function JCJFUAH_fake_script() -- AntiAFK.AntiAFK 
+coroutine.wrap(CVSCH_fake_script)()
+local function OVEK_fake_script() -- AntiAFK.AntiAFK 
 	local script = Instance.new('Script', AntiAFK)
 
 	-- Get the player's character
@@ -395,10 +395,14 @@ local function JCJFUAH_fake_script() -- AntiAFK.AntiAFK
 	end
 	
 end
-coroutine.wrap(JCJFUAH_fake_script)()
-local function HPCVG_fake_script() -- IteamChecker.AutoGun 
+coroutine.wrap(OVEK_fake_script)()
+local function KRXMDKQ_fake_script() -- IteamChecker.AutoGun 
 	local script = Instance.new('Script', IteamChecker)
 
+	-- Get the button you want to use
+	local button = script.Parent -- Assuming the script is a child of the button
+	
+	-- Attach the script to the button's Activated event
 	local player = game.Players.LocalPlayer
 	local backpack = player.Backpack
 	
@@ -432,46 +436,39 @@ local function HPCVG_fake_script() -- IteamChecker.AutoGun
 		end
 	end
 	
-	-- Call the function every 3 minutes
-	while true do
-		deleteOmegaScytheAndEquipOther()
-		wait(60) -- 3 minutes in seconds
-	end
+	button.Activated:Connect(deleteOmegaScytheAndEquipOther)
+	
 end
-coroutine.wrap(HPCVG_fake_script)()
-local function KSLP_fake_script() -- OptiButton.Optimizer 
+coroutine.wrap(KRXMDKQ_fake_script)()
+local function SQBVO_fake_script() -- OptiButton.Optimizer 
 	local script = Instance.new('Script', OptiButton)
 
-	local opti = script.Parent
-	
-	opti.MouseButton1Click:Connect(function()
-		local decalsyeeted = true 
-		local g = game
-		local w = g.Workspace
-		local l = g.Lighting
-		local t = w.Terrain
-		t.WaterWaveSize = 0
-		t.WaterWaveSpeed = 0
-		t.WaterReflectance = 0
-		t.WaterTransparency = 0
-		l.GlobalShadows = false
-		l.FogEnd = 9e9
-		l.Brightness = 0
-		settings().Rendering.QualityLevel = "Level01"
-		for i,v in pairs(g:GetDescendants()) do
-			if v:IsA("Part") or v:IsA("Union") or v:IsA("MeshPart") then
-				v.Material = "Plastic"
-				v.Reflectance = 0
-			elseif v:IsA("Decal") and decalsyeeted then 
-				v.Transparency = 1
-			elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then 
-				v.Lifetime = NumberRange.new(0)
-			end
+	local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
+	local g = game
+	local w = g.Workspace
+	local l = g.Lighting
+	local t = w.Terrain
+	t.WaterWaveSize = 0
+	t.WaterWaveSpeed = 0
+	t.WaterReflectance = 0
+	t.WaterTransparency = 0
+	l.GlobalShadows = false
+	l.FogEnd = 9e9
+	l.Brightness = 0
+	settings().Rendering.QualityLevel = "Level01"
+	for i,v in pairs(g:GetDescendants()) do
+		if v:IsA("Part") or v:IsA("Union") or v:IsA("MeshPart") then
+			v.Material = "Plastic"
+			v.Reflectance = 0
+		elseif v:IsA("Decal") and decalsyeeted then 
+			v.Transparency = 1
+		elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then 
+			v.Lifetime = NumberRange.new(0)
 		end
-	end)
+	end
 end
-coroutine.wrap(KSLP_fake_script)()
-local function MZCNHME_fake_script() -- Regone.Keybind 
+coroutine.wrap(SQBVO_fake_script)()
+local function OGJXAQP_fake_script() -- Regone.Keybind 
 	local script = Instance.new('Script', Regone)
 
 	-- Get the UI frame you want to toggle
@@ -494,4 +491,4 @@ local function MZCNHME_fake_script() -- Regone.Keybind
 	end)
 	
 end
-coroutine.wrap(MZCNHME_fake_script)()
+coroutine.wrap(OGJXAQP_fake_script)()
