@@ -146,7 +146,7 @@ AntiAFK.BorderColor3 = Color3.fromRGB(28, 135, 16)
 AntiAFK.Position = UDim2.new(0.0782195553, 0, 0.0621618219, 0)
 AntiAFK.Size = UDim2.new(0, 161, 0, 23)
 AntiAFK.Font = Enum.Font.SourceSans
-AntiAFK.Text = "Optimize"
+AntiAFK.Text = "Anti AFK"
 AntiAFK.TextColor3 = Color3.fromRGB(255, 255, 255)
 AntiAFK.TextSize = 14.000
 
@@ -195,7 +195,7 @@ CoverUp.Size = UDim2.new(0, 438, 0, 2)
 
 -- Scripts:
 
-local function JRQSD_fake_script() -- FpsDisplay.Script 
+local function FPBEFD_fake_script() -- FpsDisplay.Script 
 	local script = Instance.new('Script', FpsDisplay)
 
 	local RS = game:GetService("RunService")
@@ -210,8 +210,8 @@ local function JRQSD_fake_script() -- FpsDisplay.Script
 		frames = 0
 	end
 end
-coroutine.wrap(JRQSD_fake_script)()
-local function JAWG_fake_script() -- DestroyButton.DestroyScript 
+coroutine.wrap(FPBEFD_fake_script)()
+local function NLED_fake_script() -- DestroyButton.DestroyScript 
 	local script = Instance.new('Script', DestroyButton)
 
 	local Button = script.Parent
@@ -220,8 +220,8 @@ local function JAWG_fake_script() -- DestroyButton.DestroyScript
 		script.Parent.Parent.Parent:Destroy() 
 	end)
 end
-coroutine.wrap(JAWG_fake_script)()
-local function JFLMYFE_fake_script() -- Regone.DragScript 
+coroutine.wrap(NLED_fake_script)()
+local function PJSI_fake_script() -- Regone.DragScript 
 	local script = Instance.new('Script', Regone)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -264,8 +264,8 @@ local function JFLMYFE_fake_script() -- Regone.DragScript
 		end
 	end)
 end
-coroutine.wrap(JFLMYFE_fake_script)()
-local function UFINVRA_fake_script() -- AutoFarm.AutoFarmScript 
+coroutine.wrap(PJSI_fake_script)()
+local function EQPGXPD_fake_script() -- AutoFarm.AutoFarmScript 
 	local script = Instance.new('Script', AutoFarm)
 
 	local Button = script.Parent
@@ -329,8 +329,8 @@ local function UFINVRA_fake_script() -- AutoFarm.AutoFarmScript
 		end
 	end)
 end
-coroutine.wrap(UFINVRA_fake_script)()
-local function IXCZCOZ_fake_script() -- SpinBot.Spinner 
+coroutine.wrap(EQPGXPD_fake_script)()
+local function NTDNNRZ_fake_script() -- SpinBot.Spinner 
 	local script = Instance.new('Script', SpinBot)
 
 	local switchActivated = false -- Initially, the switch is deactivated
@@ -367,40 +367,36 @@ local function IXCZCOZ_fake_script() -- SpinBot.Spinner
 	script.Parent.MouseButton1Click:Connect(Spina)
 	
 end
-coroutine.wrap(IXCZCOZ_fake_script)()
-local function JSCNMK_fake_script() -- AntiAFK.AntiAFK 
+coroutine.wrap(NTDNNRZ_fake_script)()
+local function LUWLOCG_fake_script() -- AntiAFK.AntiAFK 
 	local script = Instance.new('Script', AntiAFK)
 
-	local opti = script.Parent
+	-- Get the player's character
+	local player = game.Players.LocalPlayer
+	local character = player.Character or player.CharacterAdded:Wait()
 	
-	opti.MouseButton1Click:Connect(function()
-		local decalsyeeted = true 
-		local g = game
-		local w = g.Workspace
-		local l = g.Lighting
-		local t = w.Terrain
-		t.WaterWaveSize = 0
-		t.WaterWaveSpeed = 0
-		t.WaterReflectance = 0
-		t.WaterTransparency = 0
-		l.GlobalShadows = false
-		l.FogEnd = 9e9
-		l.Brightness = 0
-		settings().Rendering.QualityLevel = "Level01"
-		for i,v in pairs(g:GetDescendants()) do
-			if v:IsA("Part") or v:IsA("Union") or v:IsA("MeshPart") then
-				v.Material = "Plastic"
-				v.Reflectance = 0
-			elseif v:IsA("Decal") and decalsyeeted then 
-				v.Transparency = 1
-			elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then 
-				v.Lifetime = NumberRange.new(0)
-			end
-		end
+	-- Function to send input to prevent AFK kick
+	local function sendInput()
+		local virtualUser = game:GetService("VirtualUser")
+		virtualUser:Button2Down(Vector2.new())
+		wait(1)
+		virtualUser:Button2Up(Vector2.new())
+	end
+	
+	-- Connect a function to the CharacterAdded event to get the new character
+	player.CharacterAdded:Connect(function(newCharacter)
+		character = newCharacter
 	end)
+	
+	-- Loop to continuously send input
+	while true do
+		sendInput()
+		wait(300) -- Wait 5 minutes before sending the next input
+	end
+	
 end
-coroutine.wrap(JSCNMK_fake_script)()
-local function XLJSCKG_fake_script() -- IteamChecker.AutoGun 
+coroutine.wrap(LUWLOCG_fake_script)()
+local function RUIEHDW_fake_script() -- IteamChecker.AutoGun 
 	local script = Instance.new('Script', IteamChecker)
 
 	local player = game.Players.LocalPlayer
@@ -443,8 +439,8 @@ local function XLJSCKG_fake_script() -- IteamChecker.AutoGun
 	end
 	
 end
-coroutine.wrap(XLJSCKG_fake_script)()
-local function ORPU_fake_script() -- OptiButton.Optimizer 
+coroutine.wrap(RUIEHDW_fake_script)()
+local function ZYUZGUE_fake_script() -- OptiButton.Optimizer 
 	local script = Instance.new('Script', OptiButton)
 
 	local opti = script.Parent
@@ -475,8 +471,8 @@ local function ORPU_fake_script() -- OptiButton.Optimizer
 		end
 	end)
 end
-coroutine.wrap(ORPU_fake_script)()
-local function WILSOHU_fake_script() -- Regone.Keybind 
+coroutine.wrap(ZYUZGUE_fake_script)()
+local function LPWTXFK_fake_script() -- Regone.Keybind 
 	local script = Instance.new('Script', Regone)
 
 	-- Get the UI frame you want to toggle
@@ -499,4 +495,4 @@ local function WILSOHU_fake_script() -- Regone.Keybind
 	end)
 	
 end
-coroutine.wrap(WILSOHU_fake_script)()
+coroutine.wrap(LPWTXFK_fake_script)()
