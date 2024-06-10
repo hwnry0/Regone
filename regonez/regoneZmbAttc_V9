@@ -263,7 +263,7 @@ HideUnhide.TextWrapped = true
 
 -- Scripts:
 
-local function ORTPCV_fake_script() -- FpsDisplay.FpsCounter 
+local function MGMFIQS_fake_script() -- FpsDisplay.FpsCounter 
 	local script = Instance.new('Script', FpsDisplay)
 
 	local RS = game:GetService("RunService")
@@ -278,8 +278,8 @@ local function ORTPCV_fake_script() -- FpsDisplay.FpsCounter
 		frames = 0
 	end
 end
-coroutine.wrap(ORTPCV_fake_script)()
-local function LMYNU_fake_script() -- DestroyButton.DestroyScript 
+coroutine.wrap(MGMFIQS_fake_script)()
+local function AJUF_fake_script() -- DestroyButton.DestroyScript 
 	local script = Instance.new('Script', DestroyButton)
 
 	local Button = script.Parent
@@ -288,8 +288,8 @@ local function LMYNU_fake_script() -- DestroyButton.DestroyScript
 		script.Parent.Parent.Parent:Destroy() 
 	end)
 end
-coroutine.wrap(LMYNU_fake_script)()
-local function HLLN_fake_script() -- Regone.DragScript 
+coroutine.wrap(AJUF_fake_script)()
+local function BGTQ_fake_script() -- Regone.DragScript 
 	local script = Instance.new('Script', Regone)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -332,8 +332,8 @@ local function HLLN_fake_script() -- Regone.DragScript
 		end
 	end)
 end
-coroutine.wrap(HLLN_fake_script)()
-local function NICZW_fake_script() -- AutoFarm.AutoFarmScript 
+coroutine.wrap(BGTQ_fake_script)()
+local function DPFLZI_fake_script() -- AutoFarm.AutoFarmScript 
 	local script = Instance.new('Script', AutoFarm)
 
 	local Yutton = script.Parent
@@ -397,47 +397,46 @@ local function NICZW_fake_script() -- AutoFarm.AutoFarmScript
 		end
 	end)
 end
-coroutine.wrap(NICZW_fake_script)()
-local function XYIKNES_fake_script() -- IteamChecker.AutoGun 
+coroutine.wrap(DPFLZI_fake_script)()
+local function CWHETVB_fake_script() -- IteamChecker.AutoGun 
 	local script = Instance.new('Script', IteamChecker)
 
-	-- Services
-	local Players = game:GetService("Players")
-	local RunService = game:GetService("RunService")
+	local gungetter = script.Parent
 	
-	-- Variables
-	local player = Players.LocalPlayer
-	local playerBackpack = player:WaitForChild("Backpack")
-	local playerCharacter = player.Character or player.CharacterAdded:Wait()
-	local equipped = false
-	local deleteBasicKnife
+	gungetter.MouseButton1Click:Connect(function()
+		-- Get the player's backpack
+		local backpack = game.Players.LocalPlayer:WaitForChild("Backpack")
 	
-	-- Function to delete "Basic Knife" and equip other tools
-	deleteBasicKnife = function()
-		for _, tool in ipairs(playerBackpack:GetChildren()) do
-			if tool:IsA("Tool") then
-				if tool.Name == "Basic Knife" then
-					tool:Destroy()
-				else
-					tool.Parent = playerCharacter
+		-- Function to delete the "Basic Knife" and equip other tools
+		local function manageTools()
+			-- Find the "Basic Knife" tool in the backpack
+			local basicKnife = backpack:FindFirstChild("Basic Knife")
+	
+			-- If the "Basic Knife" exists, remove it
+			if basicKnife then
+				basicKnife:Destroy()
+			end
+	
+			-- Equip all other tools in the backpack
+			for _, tool in ipairs(backpack:GetChildren()) do
+				if tool:IsA("Tool") then
+					tool.Parent = game.Players.LocalPlayer.Character
 				end
 			end
 		end
-	end
 	
-	-- Start the loop when you want to equip/unequip tools
-	-- Replace this with your desired condition or event
-	equipped = true
-	deleteBasicKnife()
-	while equipped do
-		RunService.Heartbeat:Wait()
-		deleteBasicKnife()
-		wait(15)
-	end
+		-- Call the manageTools function initially
+		manageTools()
 	
+		-- Repeat the manageTools function every 15 seconds
+		while true do
+			wait(15)
+			manageTools()
+		end
+	end)
 end
-coroutine.wrap(XYIKNES_fake_script)()
-local function NZEX_fake_script() -- AntiAFK.AntiAFK 
+coroutine.wrap(CWHETVB_fake_script)()
+local function EUNPI_fake_script() -- AntiAFK.AntiAFK 
 	local script = Instance.new('Script', AntiAFK)
 
 	local Jutton = script.Parent
@@ -468,43 +467,51 @@ local function NZEX_fake_script() -- AntiAFK.AntiAFK
 	end)
 	
 end
-coroutine.wrap(NZEX_fake_script)()
-local function LNSDKJ_fake_script() -- OptiButton.Optimizer 
+coroutine.wrap(EUNPI_fake_script)()
+local function IFSRFLL_fake_script() -- OptiButton.Optimizer 
 	local script = Instance.new('Script', OptiButton)
 
-	local Uutton = script.Parent
+	local optimiz = script.Parent
 	
-	local function OptimizeGraphics()
-		local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
-		local g = game
-		local w = g.Workspace
-		local l = g.Lighting
-		local t = w.Terrain
-		t.WaterWaveSize = 0
-		t.WaterWaveSpeed = 0
-		t.WaterReflectance = 0
-		t.WaterTransparency = 0
-		l.GlobalShadows = false
-		l.FogEnd = 9e9
-		l.Brightness = 0
-		settings().Rendering.QualityLevel = "Level01"
-		for i,v in pairs(g:GetDescendants()) do
-			if v:IsA("Part") or v:IsA("Union") or v:IsA("MeshPart") then
-				v.Material = "Plastic"
-				v.Reflectance = 0
-			elseif v:IsA("Decal") and decalsyeeted then 
-				v.Transparency = 1
-			elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then 
-				v.Lifetime = NumberRange.new(0)
+	optimiz.MouseButton1Click:Connect(function()
+		local function OptimizeGraphics()
+			local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
+			local g = game
+			local w = g.Workspace
+			local l = g.Lighting
+			local t = w.Terrain
+			t.WaterWaveSize = 0
+			t.WaterWaveSpeed = 0
+			t.WaterReflectance = 0
+			t.WaterTransparency = 0
+			l.GlobalShadows = false
+			l.FogEnd = 9e9
+			l.Brightness = 0
+			settings().Rendering.QualityLevel = "Level01"
+			for i,v in pairs(g:GetDescendants()) do
+				if v:IsA("Part") or v:IsA("Union") or v:IsA("MeshPart") then
+					v.Material = "Plastic"
+					v.Reflectance = 0
+				elseif v:IsA("Decal") and decalsyeeted then 
+					v.Transparency = 1
+				elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then 
+					v.Lifetime = NumberRange.new(0)
+				end
 			end
 		end
-	end
 	
-	Uutton.MouseButton1Click:Connect(OptimizeGraphics)
+		-- Call the function initially
+		OptimizeGraphics()
 	
+		-- Run the function every 60 seconds
+		while true do
+			wait(60)
+			OptimizeGraphics()
+		end
+	end)
 end
-coroutine.wrap(LNSDKJ_fake_script)()
-local function HIVXHI_fake_script() -- SpinBot.Spinner 
+coroutine.wrap(IFSRFLL_fake_script)()
+local function BMVK_fake_script() -- SpinBot.Spinner 
 	local script = Instance.new('Script', SpinBot)
 
 	local switchActivated = false -- Initially, the switch is deactivated
@@ -541,8 +548,8 @@ local function HIVXHI_fake_script() -- SpinBot.Spinner
 	script.Parent.MouseButton1Click:Connect(Spina)
 	
 end
-coroutine.wrap(HIVXHI_fake_script)()
-local function EKWJJP_fake_script() -- InfoCopy.CopyScript 
+coroutine.wrap(BMVK_fake_script)()
+local function SKRTBNV_fake_script() -- InfoCopy.CopyScript 
 	local script = Instance.new('Script', InfoCopy)
 
 	local Copyer = script.Parent
@@ -561,8 +568,8 @@ local function EKWJJP_fake_script() -- InfoCopy.CopyScript
 		copyToClipboard("https://guns.lol/returrn")
 	end)
 end
-coroutine.wrap(EKWJJP_fake_script)()
-local function SWBM_fake_script() -- Regone.Keybind 
+coroutine.wrap(SKRTBNV_fake_script)()
+local function HBSPVHY_fake_script() -- Regone.Keybind 
 	local script = Instance.new('Script', Regone)
 
 	-- Get the UI frame you want to toggle
@@ -585,4 +592,4 @@ local function SWBM_fake_script() -- Regone.Keybind
 	end)
 	
 end
-coroutine.wrap(SWBM_fake_script)()
+coroutine.wrap(HBSPVHY_fake_script)()
