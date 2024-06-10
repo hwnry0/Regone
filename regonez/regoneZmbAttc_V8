@@ -263,7 +263,7 @@ HideUnhide.TextWrapped = true
 
 -- Scripts:
 
-local function NXJVP_fake_script() -- FpsDisplay.FpsCounter 
+local function ORTPCV_fake_script() -- FpsDisplay.FpsCounter 
 	local script = Instance.new('Script', FpsDisplay)
 
 	local RS = game:GetService("RunService")
@@ -278,8 +278,8 @@ local function NXJVP_fake_script() -- FpsDisplay.FpsCounter
 		frames = 0
 	end
 end
-coroutine.wrap(NXJVP_fake_script)()
-local function ILIZ_fake_script() -- DestroyButton.DestroyScript 
+coroutine.wrap(ORTPCV_fake_script)()
+local function LMYNU_fake_script() -- DestroyButton.DestroyScript 
 	local script = Instance.new('Script', DestroyButton)
 
 	local Button = script.Parent
@@ -288,8 +288,8 @@ local function ILIZ_fake_script() -- DestroyButton.DestroyScript
 		script.Parent.Parent.Parent:Destroy() 
 	end)
 end
-coroutine.wrap(ILIZ_fake_script)()
-local function XTQAQ_fake_script() -- Regone.DragScript 
+coroutine.wrap(LMYNU_fake_script)()
+local function HLLN_fake_script() -- Regone.DragScript 
 	local script = Instance.new('Script', Regone)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -332,8 +332,8 @@ local function XTQAQ_fake_script() -- Regone.DragScript
 		end
 	end)
 end
-coroutine.wrap(XTQAQ_fake_script)()
-local function ULAUQT_fake_script() -- AutoFarm.AutoFarmScript 
+coroutine.wrap(HLLN_fake_script)()
+local function NICZW_fake_script() -- AutoFarm.AutoFarmScript 
 	local script = Instance.new('Script', AutoFarm)
 
 	local Yutton = script.Parent
@@ -397,61 +397,47 @@ local function ULAUQT_fake_script() -- AutoFarm.AutoFarmScript
 		end
 	end)
 end
-coroutine.wrap(ULAUQT_fake_script)()
-local function LYUSIKZ_fake_script() -- IteamChecker.AutoGun 
+coroutine.wrap(NICZW_fake_script)()
+local function XYIKNES_fake_script() -- IteamChecker.AutoGun 
 	local script = Instance.new('Script', IteamChecker)
 
-	-- Function to delete the "Basic Knife" and equip another tool
-	local player = game.Players.LocalPlayer
-	local backpack = player.Backpack
+	-- Services
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
 	
-	local function deleteBasicKnifeAndEquipOther()
-		-- Find the "Basic Knife" tool in the backpack
-		local basicknife
-		for _, tool in ipairs(backpack:GetChildren()) do
-			if tool:IsA("Tool") and tool.Name == "Basic Knife" then
-				basicknife = tool
-				break
+	-- Variables
+	local player = Players.LocalPlayer
+	local playerBackpack = player:WaitForChild("Backpack")
+	local playerCharacter = player.Character or player.CharacterAdded:Wait()
+	local equipped = false
+	local deleteBasicKnife
+	
+	-- Function to delete "Basic Knife" and equip other tools
+	deleteBasicKnife = function()
+		for _, tool in ipairs(playerBackpack:GetChildren()) do
+			if tool:IsA("Tool") then
+				if tool.Name == "Basic Knife" then
+					tool:Destroy()
+				else
+					tool.Parent = playerCharacter
+				end
 			end
-		end
-	
-		-- If the "Basic Knife" is found, delete it
-		if basicknife then
-			basicknife:Destroy()
-		end
-	
-		-- Find the first non-"Basic Knife" tool in the backpack
-		local toolToEquip
-		for _, tool in ipairs(backpack:GetChildren()) do
-			if tool:IsA("Tool") and tool.Name ~= "Basic Knife" then
-				toolToEquip = tool
-				break
-			end
-		end
-	
-		-- If a non-"Basic Knife" tool is found, equip it
-		if toolToEquip then
-			player.Character.Humanoid:EquipTool(toolToEquip)
 		end
 	end
 	
-	-- Get the button named "IteamChecker"
-	local button = script.Parent:WaitForChild("IteamChecker")
-	
-	-- Start the timer when the button is pressed
-	local timer
-	button.Activated:Connect(function()
-		if not timer then
-			timer = game:GetService("RunService").Heartbeat:Connect(function()
-				deleteBasicKnifeAndEquipOther()
-				wait(15)
-			end)
-		end
-	end)
+	-- Start the loop when you want to equip/unequip tools
+	-- Replace this with your desired condition or event
+	equipped = true
+	deleteBasicKnife()
+	while equipped do
+		RunService.Heartbeat:Wait()
+		deleteBasicKnife()
+		wait(15)
+	end
 	
 end
-coroutine.wrap(LYUSIKZ_fake_script)()
-local function WRBPN_fake_script() -- AntiAFK.AntiAFK 
+coroutine.wrap(XYIKNES_fake_script)()
+local function NZEX_fake_script() -- AntiAFK.AntiAFK 
 	local script = Instance.new('Script', AntiAFK)
 
 	local Jutton = script.Parent
@@ -482,8 +468,8 @@ local function WRBPN_fake_script() -- AntiAFK.AntiAFK
 	end)
 	
 end
-coroutine.wrap(WRBPN_fake_script)()
-local function IIIIB_fake_script() -- OptiButton.Optimizer 
+coroutine.wrap(NZEX_fake_script)()
+local function LNSDKJ_fake_script() -- OptiButton.Optimizer 
 	local script = Instance.new('Script', OptiButton)
 
 	local Uutton = script.Parent
@@ -517,8 +503,8 @@ local function IIIIB_fake_script() -- OptiButton.Optimizer
 	Uutton.MouseButton1Click:Connect(OptimizeGraphics)
 	
 end
-coroutine.wrap(IIIIB_fake_script)()
-local function UQHJR_fake_script() -- SpinBot.Spinner 
+coroutine.wrap(LNSDKJ_fake_script)()
+local function HIVXHI_fake_script() -- SpinBot.Spinner 
 	local script = Instance.new('Script', SpinBot)
 
 	local switchActivated = false -- Initially, the switch is deactivated
@@ -555,8 +541,8 @@ local function UQHJR_fake_script() -- SpinBot.Spinner
 	script.Parent.MouseButton1Click:Connect(Spina)
 	
 end
-coroutine.wrap(UQHJR_fake_script)()
-local function DTIHFW_fake_script() -- InfoCopy.CopyScript 
+coroutine.wrap(HIVXHI_fake_script)()
+local function EKWJJP_fake_script() -- InfoCopy.CopyScript 
 	local script = Instance.new('Script', InfoCopy)
 
 	local Copyer = script.Parent
@@ -575,8 +561,8 @@ local function DTIHFW_fake_script() -- InfoCopy.CopyScript
 		copyToClipboard("https://guns.lol/returrn")
 	end)
 end
-coroutine.wrap(DTIHFW_fake_script)()
-local function AFKVTOS_fake_script() -- Regone.Keybind 
+coroutine.wrap(EKWJJP_fake_script)()
+local function SWBM_fake_script() -- Regone.Keybind 
 	local script = Instance.new('Script', Regone)
 
 	-- Get the UI frame you want to toggle
@@ -599,4 +585,4 @@ local function AFKVTOS_fake_script() -- Regone.Keybind
 	end)
 	
 end
-coroutine.wrap(AFKVTOS_fake_script)()
+coroutine.wrap(SWBM_fake_script)()
