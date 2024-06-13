@@ -23,6 +23,7 @@ local InfoArea = Instance.new("Frame")
 local TopText1_3 = Instance.new("TextLabel")
 local DiscrdInfo = Instance.new("TextLabel")
 local InfoCopy = Instance.new("TextButton")
+local CopyVerify = Instance.new("TextLabel")
 local CoverUp = Instance.new("Frame")
 local HideUnhide = Instance.new("TextLabel")
 
@@ -231,7 +232,8 @@ InfoCopy.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 InfoCopy.BackgroundTransparency = 1.000
 InfoCopy.BorderColor3 = Color3.fromRGB(28, 135, 16)
 InfoCopy.BorderSizePixel = 0
-InfoCopy.Position = UDim2.new(0.458000004, 0, 0.419, 1)
+InfoCopy.LayoutOrder = 1
+InfoCopy.Position = UDim2.new(0.458240569, 0, 0.447986245, 1)
 InfoCopy.Size = UDim2.new(0, 94, 0, 16)
 InfoCopy.Font = Enum.Font.SourceSans
 InfoCopy.Text = "(Click to Copy)"
@@ -239,6 +241,21 @@ InfoCopy.TextColor3 = Color3.fromRGB(49, 97, 194)
 InfoCopy.TextSize = 15.000
 InfoCopy.TextXAlignment = Enum.TextXAlignment.Left
 InfoCopy.TextYAlignment = Enum.TextYAlignment.Top
+
+CopyVerify.Name = "CopyVerify"
+CopyVerify.Parent = InfoArea
+CopyVerify.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+CopyVerify.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CopyVerify.BorderSizePixel = 0
+CopyVerify.Position = UDim2.new(0.0947252959, 0, 0.294203341, 0)
+CopyVerify.Size = UDim2.new(0, 155, 0, 69)
+CopyVerify.Visible = false
+CopyVerify.Font = Enum.Font.Code
+CopyVerify.Text = "Done!"
+CopyVerify.TextColor3 = Color3.fromRGB(255, 255, 255)
+CopyVerify.TextScaled = true
+CopyVerify.TextSize = 14.000
+CopyVerify.TextWrapped = true
 
 CoverUp.Name = "CoverUp"
 CoverUp.Parent = FirstFrame
@@ -263,7 +280,7 @@ HideUnhide.TextWrapped = true
 
 -- Scripts:
 
-local function MGMFIQS_fake_script() -- FpsDisplay.FpsCounter 
+local function PDBZG_fake_script() -- FpsDisplay.FpsCounter 
 	local script = Instance.new('Script', FpsDisplay)
 
 	local RS = game:GetService("RunService")
@@ -278,8 +295,8 @@ local function MGMFIQS_fake_script() -- FpsDisplay.FpsCounter
 		frames = 0
 	end
 end
-coroutine.wrap(MGMFIQS_fake_script)()
-local function AJUF_fake_script() -- DestroyButton.DestroyScript 
+coroutine.wrap(PDBZG_fake_script)()
+local function PYNJ_fake_script() -- DestroyButton.DestroyScript 
 	local script = Instance.new('Script', DestroyButton)
 
 	local Button = script.Parent
@@ -288,8 +305,8 @@ local function AJUF_fake_script() -- DestroyButton.DestroyScript
 		script.Parent.Parent.Parent:Destroy() 
 	end)
 end
-coroutine.wrap(AJUF_fake_script)()
-local function BGTQ_fake_script() -- Regone.DragScript 
+coroutine.wrap(PYNJ_fake_script)()
+local function KPPHHIM_fake_script() -- Regone.DragScript 
 	local script = Instance.new('Script', Regone)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -332,8 +349,8 @@ local function BGTQ_fake_script() -- Regone.DragScript
 		end
 	end)
 end
-coroutine.wrap(BGTQ_fake_script)()
-local function DPFLZI_fake_script() -- AutoFarm.AutoFarmScript 
+coroutine.wrap(KPPHHIM_fake_script)()
+local function IGBN_fake_script() -- AutoFarm.AutoFarmScript 
 	local script = Instance.new('Script', AutoFarm)
 
 	local Yutton = script.Parent
@@ -397,24 +414,32 @@ local function DPFLZI_fake_script() -- AutoFarm.AutoFarmScript
 		end
 	end)
 end
-coroutine.wrap(DPFLZI_fake_script)()
-local function CWHETVB_fake_script() -- IteamChecker.AutoGun 
+coroutine.wrap(IGBN_fake_script)()
+local function OBEXT_fake_script() -- IteamChecker.AutoGun 
 	local script = Instance.new('Script', IteamChecker)
 
-	local gungetter = script.Parent
+	local gungetta = script.Parent
 	
-	gungetter.MouseButton1Click:Connect(function()
+	gungetta.MouseButton1Click:Connect(function()
 		-- Get the player's backpack
 		local backpack = game.Players.LocalPlayer:WaitForChild("Backpack")
 	
-		-- Function to delete the "Basic Knife" and equip other tools
-		local function manageTools()
-			-- Find the "Basic Knife" tool in the backpack
-			local basicKnife = backpack:FindFirstChild("Basic Knife")
+		-- List of tools to remove
+		local toolsToRemove = {
+			"Basic Knife",
+			"Molotov",
+			"Grenade",
+			"Stun Grenade"
+		}
 	
-			-- If the "Basic Knife" exists, remove it
-			if basicKnife then
-				basicKnife:Destroy()
+		-- Function to remove specified tools and equip others
+		local function manageTools()
+			-- Remove the specified tools from the backpack
+			for _, toolName in ipairs(toolsToRemove) do
+				local tool = backpack:FindFirstChild(toolName)
+				if tool then
+					tool:Destroy()
+				end
 			end
 	
 			-- Equip all other tools in the backpack
@@ -425,18 +450,16 @@ local function CWHETVB_fake_script() -- IteamChecker.AutoGun
 			end
 		end
 	
-		-- Call the manageTools function initially
-		manageTools()
-	
-		-- Repeat the manageTools function every 15 seconds
+		-- Run the manageTools function every 30 seconds
 		while true do
-			wait(15)
 			manageTools()
+			wait(30) -- Wait for 30 seconds
 		end
+	
 	end)
 end
-coroutine.wrap(CWHETVB_fake_script)()
-local function EUNPI_fake_script() -- AntiAFK.AntiAFK 
+coroutine.wrap(OBEXT_fake_script)()
+local function FNKI_fake_script() -- AntiAFK.AntiAFK 
 	local script = Instance.new('Script', AntiAFK)
 
 	local Jutton = script.Parent
@@ -467,8 +490,8 @@ local function EUNPI_fake_script() -- AntiAFK.AntiAFK
 	end)
 	
 end
-coroutine.wrap(EUNPI_fake_script)()
-local function IFSRFLL_fake_script() -- OptiButton.Optimizer 
+coroutine.wrap(FNKI_fake_script)()
+local function OCION_fake_script() -- OptiButton.Optimizer 
 	local script = Instance.new('Script', OptiButton)
 
 	local optimiz = script.Parent
@@ -510,8 +533,8 @@ local function IFSRFLL_fake_script() -- OptiButton.Optimizer
 		end
 	end)
 end
-coroutine.wrap(IFSRFLL_fake_script)()
-local function BMVK_fake_script() -- SpinBot.Spinner 
+coroutine.wrap(OCION_fake_script)()
+local function LZLET_fake_script() -- SpinBot.Spinner 
 	local script = Instance.new('Script', SpinBot)
 
 	local switchActivated = false -- Initially, the switch is deactivated
@@ -548,8 +571,8 @@ local function BMVK_fake_script() -- SpinBot.Spinner
 	script.Parent.MouseButton1Click:Connect(Spina)
 	
 end
-coroutine.wrap(BMVK_fake_script)()
-local function SKRTBNV_fake_script() -- InfoCopy.CopyScript 
+coroutine.wrap(LZLET_fake_script)()
+local function GJJV_fake_script() -- InfoCopy.CopyScript 
 	local script = Instance.new('Script', InfoCopy)
 
 	local Copyer = script.Parent
@@ -567,9 +590,10 @@ local function SKRTBNV_fake_script() -- InfoCopy.CopyScript
 	
 		copyToClipboard("https://guns.lol/returrn")
 	end)
+	
 end
-coroutine.wrap(SKRTBNV_fake_script)()
-local function HBSPVHY_fake_script() -- Regone.Keybind 
+coroutine.wrap(GJJV_fake_script)()
+local function GQIIH_fake_script() -- Regone.Keybind 
 	local script = Instance.new('Script', Regone)
 
 	-- Get the UI frame you want to toggle
@@ -592,4 +616,4 @@ local function HBSPVHY_fake_script() -- Regone.Keybind
 	end)
 	
 end
-coroutine.wrap(HBSPVHY_fake_script)()
+coroutine.wrap(GQIIH_fake_script)()
