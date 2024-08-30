@@ -1,4 +1,4 @@
--- Gui to Lua
+-- Gui to farts
 -- Version: 3.2
 
 -- Instances:
@@ -144,7 +144,7 @@ UICorner_7.Parent = otherGUI
 
 -- Scripts:
 
-local function IWBMKU_fake_script() -- antlerCase.Antler script 
+local function CFAWV_fake_script() -- antlerCase.Antler script 
 	local script = Instance.new('Script', antlerCase)
 
 	local lastPressed = 0
@@ -166,8 +166,8 @@ local function IWBMKU_fake_script() -- antlerCase.Antler script
 	script.Parent.MouseButton1Click:Connect(Ribbon)
 	
 end
-coroutine.wrap(IWBMKU_fake_script)()
-local function AVXE_fake_script() -- KnifeCase.KnifeScript 
+coroutine.wrap(CFAWV_fake_script)()
+local function BQZQTT_fake_script() -- KnifeCase.KnifeScript 
 	local script = Instance.new('Script', KnifeCase)
 
 	local lastPressed = 0
@@ -189,8 +189,8 @@ local function AVXE_fake_script() -- KnifeCase.KnifeScript
 	script.Parent.MouseButton1Click:Connect(Knife)
 	
 end
-coroutine.wrap(AVXE_fake_script)()
-local function ULACNM_fake_script() -- ChairCase.ChairScript 
+coroutine.wrap(BQZQTT_fake_script)()
+local function IYJEXNY_fake_script() -- ChairCase.ChairScript 
 	local script = Instance.new('Script', ChairCase)
 
 	local lastPressed = 0
@@ -212,8 +212,8 @@ local function ULACNM_fake_script() -- ChairCase.ChairScript
 	script.Parent.MouseButton1Click:Connect(Chair)
 	
 end
-coroutine.wrap(ULACNM_fake_script)()
-local function IWWMWNU_fake_script() -- CoinMulti.CoinScript 
+coroutine.wrap(IYJEXNY_fake_script)()
+local function RKIO_fake_script() -- CoinMulti.CoinScript 
 	local script = Instance.new('Script', CoinMulti)
 
 	local function CoinMaster()
@@ -231,80 +231,115 @@ local function IWWMWNU_fake_script() -- CoinMulti.CoinScript
 	
 	script.Parent.MouseButton1Click:Connect(CoinMaster)
 end
-coroutine.wrap(IWWMWNU_fake_script)()
-local function KJQPST_fake_script() -- Afker.AfkScript 
+coroutine.wrap(RKIO_fake_script)()
+local function KTEQT_fake_script() -- Afker.AfkScript 
 	local script = Instance.new('Script', Afker)
 
-	-- Declare variables
+	-- Services
 	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+	
+	-- Variables
 	local player = Players.LocalPlayer
-	local lastNumber, isLoopRunning = nil, false
-	local isAfkActive = false  -- Variable to track the AFK state
-	local originalPosition = nil  -- To store the original position
+	local isLoopRunning = false
+	local loopRunning = false
 	
-	-- Define positions
-	local positions = {
-		Vector3.new(-31.7, 20.58, -210.37),
-		Vector3.new(-31.17, 7.02, -240.35),
-		Vector3.new(-47.86, 9.02, -220.04),
-		Vector3.new(-14.78, 5.02, -180.67),
-		Vector3.new(-41.93, 11.02, -197.31)
-	}
-	
-	-- Create parts in the workspace
-	for _, pos in ipairs(positions) do
+	-- Function to create Dino Nuggets
+	local function createDinoNugget(position)
 		local part = Instance.new("Part")
-		part.Name, part.Size, part.CFrame, part.Anchored, part.Parent = "Dino Nugget", Vector3.new(1, 0.5, 1), CFrame.new(pos), true, workspace
+		part.Name = "Dino Nugget"
+		part.Size = Vector3.new(1, 0.5, 1)
+		part.CFrame = CFrame.new(position)
+		part.Anchored = true
+		part.Parent = workspace
 	end
 	
-	-- Function to set a random CFrame
-	local function setRandomCFrame(hrp)
+	-- Create Dino Nuggets at specified positions
+	createDinoNugget(Vector3.new(-31.7, 20.58, -210.37))
+	createDinoNugget(Vector3.new(-31.17, 7.02, -240.35))
+	createDinoNugget(Vector3.new(-47.86, 9.02, -220.04))
+	createDinoNugget(Vector3.new(-14.78, 5.02, -180.67))
+	createDinoNugget(Vector3.new(-41.93, 11.02, -197.31))
+	
+	-- Function to set random CFrame
+	local function setRandomCFrame(humanoidRootPart)
 		local randomNumber
-		repeat randomNumber = math.random(1, #positions) until randomNumber ~= lastNumber
-		hrp.CFrame, lastNumber = CFrame.new(positions[randomNumber] + Vector3.new(0, 1, 0)), randomNumber
+		repeat
+			randomNumber = math.random(1, 5)
+		until randomNumber ~= lastNumber
+	
+		if randomNumber == 1 then
+			humanoidRootPart.CFrame = CFrame.new(-31.7, 21.58, -210.37)
+		elseif randomNumber == 2 then
+			humanoidRootPart.CFrame = CFrame.new(-31.17, 8.02, -240.35)
+		elseif randomNumber == 3 then
+			humanoidRootPart.CFrame = CFrame.new(-47.86, 10.02, -220.04)
+		elseif randomNumber == 4 then
+			humanoidRootPart.CFrame = CFrame.new(-14.78, 6.02, -180.67)
+		elseif randomNumber == 5 then
+			humanoidRootPart.CFrame = CFrame.new(-41.93, 12.02, -197.31)
+		end
+	
+		lastNumber = randomNumber
 	end
 	
-	-- Function to start the AFK loop
+	-- Function to start the CFrame loop
 	local function startCFrameLoop()
 		if isLoopRunning then return end
 		isLoopRunning = true
+		loopRunning = true
 	
-		while isAfkActive do
-			local hrp = (player.Character or player.CharacterAdded:Wait()):WaitForChild("HumanoidRootPart")
-			setRandomCFrame(hrp)
+		while loopRunning do
+			local character = player.Character or player.CharacterAdded:Wait()
+			local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+			setRandomCFrame(humanoidRootPart)
 			wait(0.5)
 		end
+	end
 	
+	-- Function to stop the CFrame loop
+	local function stopCFrameLoop()
+		loopRunning = false
 		isLoopRunning = false
 	end
 	
-	-- Toggle function to activate/deactivate AFK
-	local function toggleAfk()
-		if isAfkActive then
-			-- Stop AFK mode and reset position
-			isAfkActive = false
-			if player.Character then
-				local hrp = player.Character:FindFirstChild("HumanoidRootPart")
-				if hrp and originalPosition then
-					hrp.CFrame = originalPosition
-				end
-			end
-		else
-			-- Start AFK mode
-			isAfkActive = true
-			originalPosition = player.Character and player.Character:FindFirstChild("HumanoidRootPart") and player.Character.HumanoidRootPart.CFrame
+	-- Function to check and restart the loop every 30 seconds
+	local function monitorLoop()
+		while true do
+			wait(30)
 			if not isLoopRunning then
 				startCFrameLoop()
 			end
 		end
 	end
 	
-	-- Connect the function to the MouseButton1Click event of the button
-	script.Parent.MouseButton1Click:Connect(toggleAfk)
+	-- Create AFK button
+	local afkButton = Instance.new("TextButton")
+	afkButton.Name = "AFKbutton"
+	afkButton.Size = UDim2.new(0, 200, 0, 50)
+	afkButton.Position = UDim2.new(0.5, -100, 0.5, -25)
+	afkButton.Text = "Start CFrame Loop"
+	afkButton.Parent = player.PlayerGui
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		if not isLoopRunning then
+			startCFrameLoop()
+		end
+	end)
+	
+	-- Monitor and restart the loop if necessary
+	RunService.Heartbeat:Connect(function()
+		if not loopRunning and isLoopRunning then
+			stopCFrameLoop()
+		end
+	end)
+	
+	-- Start the monitor function
+	spawn(monitorLoop)
 	
 end
-coroutine.wrap(KJQPST_fake_script)()
-local function SNTYKMV_fake_script() -- MainFrame.Drag 
+coroutine.wrap(KTEQT_fake_script)()
+local function XBNTRUW_fake_script() -- MainFrame.Drag 
 	local script = Instance.new('Script', MainFrame)
 
 	-- grab script
@@ -410,8 +445,8 @@ local function SNTYKMV_fake_script() -- MainFrame.Drag
 	
 	CAS:BindAction("Grab", Grab, false, Enum.UserInputType.MouseButton1)
 end
-coroutine.wrap(SNTYKMV_fake_script)()
-local function LCYOLL_fake_script() -- otherGUI.Antler script 
+coroutine.wrap(XBNTRUW_fake_script)()
+local function OCCYKK_fake_script() -- otherGUI.Antler script 
 	local script = Instance.new('Script', otherGUI)
 
 	local function GUI2()
@@ -421,4 +456,4 @@ local function LCYOLL_fake_script() -- otherGUI.Antler script
 	script.Parent.MouseButton1Click:Connect(GUI2)
 	
 end
-coroutine.wrap(LCYOLL_fake_script)()
+coroutine.wrap(OCCYKK_fake_script)()
