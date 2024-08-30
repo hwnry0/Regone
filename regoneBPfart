@@ -1,0 +1,396 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local MainGUI = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local antlerCase = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local KnifeCase = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local ChairCase = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local CoinMulti = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local Afker = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+
+--Properties:
+
+MainGUI.Name = "MainGUI"
+MainGUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+MainGUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+MainGUI.ResetOnSpawn = false
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = MainGUI
+MainFrame.BackgroundColor3 = Color3.fromRGB(87, 87, 87)
+MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainFrame.BorderSizePixel = 0
+MainFrame.Position = UDim2.new(0.748745441, 0, 0.0222026445, 0)
+MainFrame.Size = UDim2.new(0, 98, 0, 237)
+
+UICorner.CornerRadius = UDim.new(0, 3)
+UICorner.Parent = MainFrame
+
+antlerCase.Name = "antlerCase"
+antlerCase.Parent = MainFrame
+antlerCase.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+antlerCase.BorderColor3 = Color3.fromRGB(0, 0, 0)
+antlerCase.BorderSizePixel = 0
+antlerCase.Position = UDim2.new(0.0920000002, 0, 0.25, 0)
+antlerCase.Size = UDim2.new(0, 80, 0, 29)
+antlerCase.Font = Enum.Font.Arial
+antlerCase.Text = "Ribbon case"
+antlerCase.TextColor3 = Color3.fromRGB(247, 247, 247)
+antlerCase.TextSize = 14.000
+
+UICorner_2.CornerRadius = UDim.new(0, 3)
+UICorner_2.Parent = antlerCase
+
+KnifeCase.Name = "KnifeCase"
+KnifeCase.Parent = MainFrame
+KnifeCase.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+KnifeCase.BorderColor3 = Color3.fromRGB(0, 0, 0)
+KnifeCase.BorderSizePixel = 0
+KnifeCase.Position = UDim2.new(0.0920000002, 0, 0.400000006, 0)
+KnifeCase.Size = UDim2.new(0, 80, 0, 29)
+KnifeCase.Font = Enum.Font.Arial
+KnifeCase.Text = "Crown knife"
+KnifeCase.TextColor3 = Color3.fromRGB(247, 247, 247)
+KnifeCase.TextSize = 14.000
+
+UICorner_3.CornerRadius = UDim.new(0, 3)
+UICorner_3.Parent = KnifeCase
+
+ChairCase.Name = "ChairCase"
+ChairCase.Parent = MainFrame
+ChairCase.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+ChairCase.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ChairCase.BorderSizePixel = 0
+ChairCase.Position = UDim2.new(0.0920000002, 0, 0.550000012, 0)
+ChairCase.Size = UDim2.new(0, 80, 0, 29)
+ChairCase.Font = Enum.Font.Arial
+ChairCase.Text = "Red chair"
+ChairCase.TextColor3 = Color3.fromRGB(247, 247, 247)
+ChairCase.TextSize = 14.000
+
+UICorner_4.CornerRadius = UDim.new(0, 3)
+UICorner_4.Parent = ChairCase
+
+CoinMulti.Name = "CoinMulti"
+CoinMulti.Parent = MainFrame
+CoinMulti.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+CoinMulti.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CoinMulti.BorderSizePixel = 0
+CoinMulti.Position = UDim2.new(0.0920000002, 0, 0.699999988, 0)
+CoinMulti.Size = UDim2.new(0, 80, 0, 29)
+CoinMulti.Font = Enum.Font.Arial
+CoinMulti.Text = "Coin/gun hack"
+CoinMulti.TextColor3 = Color3.fromRGB(247, 247, 247)
+CoinMulti.TextSize = 12.000
+
+UICorner_5.CornerRadius = UDim.new(0, 3)
+UICorner_5.Parent = CoinMulti
+
+Afker.Name = "Afker"
+Afker.Parent = MainFrame
+Afker.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+Afker.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Afker.BorderSizePixel = 0
+Afker.Position = UDim2.new(0.0920000002, 0, 0.850000024, 0)
+Afker.Size = UDim2.new(0, 80, 0, 29)
+Afker.Font = Enum.Font.Arial
+Afker.Text = "Afk"
+Afker.TextColor3 = Color3.fromRGB(247, 247, 247)
+Afker.TextSize = 14.000
+
+UICorner_6.CornerRadius = UDim.new(0, 3)
+UICorner_6.Parent = Afker
+
+TextLabel.Parent = MainFrame
+TextLabel.BackgroundColor3 = Color3.fromRGB(247, 247, 247)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.0408150814, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 89, 0, 26)
+TextLabel.Font = Enum.Font.FredokaOne
+TextLabel.Text = "hwnrys bp"
+TextLabel.TextColor3 = Color3.fromRGB(215, 215, 215)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+-- Scripts:
+
+local function MUTVOML_fake_script() -- antlerCase.Antler script 
+	local script = Instance.new('Script', antlerCase)
+
+	local lastPressed = 0
+	local cooldown = 60 -- Cooldown in seconds (1 minute and 30 seconds)
+	
+	local function Ribbon()
+		local currentTime = tick()
+		if currentTime - lastPressed >= cooldown then
+			lastPressed = currentTime
+			local args = {
+				[1] = 66,
+				[2] = "Accessories",
+				[3] = "Knife Antlers"
+			}
+			game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+		end
+	end
+	
+	script.Parent.MouseButton1Click:Connect(Ribbon)
+	
+end
+coroutine.wrap(MUTVOML_fake_script)()
+local function SMOZ_fake_script() -- KnifeCase.KnifeScript 
+	local script = Instance.new('Script', KnifeCase)
+
+	local lastPressed = 0
+	local cooldown = 60 -- Cooldown in seconds (1 minute and 30 seconds)
+	
+	local function Knife()
+		local currentTime = tick()
+		if currentTime - lastPressed >= cooldown then
+			lastPressed = currentTime
+			local args = {
+				[1] = 66,
+				[2] = "Knife Skins",
+				[3] = "Winter Gift"
+			}
+			game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+		end
+	end
+	
+	script.Parent.MouseButton1Click:Connect(Knife)
+	
+end
+coroutine.wrap(SMOZ_fake_script)()
+local function EAUDDH_fake_script() -- ChairCase.ChairScript 
+	local script = Instance.new('Script', ChairCase)
+
+	local lastPressed = 0
+	local cooldown = 60 -- Cooldown in seconds (1 minute and 30 seconds)
+	
+	local function Chair()
+		local currentTime = tick()
+		if currentTime - lastPressed >= cooldown then
+			lastPressed = currentTime
+			local args = {
+				[1] = 66,
+				[2] = "Chair Skins",
+				[3] = "Winter"
+			}
+			game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+		end
+	end
+	
+	script.Parent.MouseButton1Click:Connect(Chair)
+	
+end
+coroutine.wrap(EAUDDH_fake_script)()
+local function VMTLRVH_fake_script() -- CoinMulti.CoinScript 
+	local script = Instance.new('Script', CoinMulti)
+
+	local function CoinMaster()
+		while wait() do
+			game:GetService("ReplicatedStorage").RemoteEvent:FireServer(16, "public")
+			wait()
+			for i,v in pairs(game.Players:GetPlayers()) do
+				if v.Name == game.Players.LocalPlayer.Name then
+				else
+					game:GetService("ReplicatedStorage").RemoteEvent:FireServer(30, v)
+				end
+			end
+		end
+	end
+	
+	script.Parent.MouseButton1Click:Connect(CoinMaster)
+end
+coroutine.wrap(VMTLRVH_fake_script)()
+local function BFJA_fake_script() -- Afker.AfkScript 
+	local script = Instance.new('Script', Afker)
+
+	-- Declare variables
+	local Players = game:GetService("Players")
+	local player = Players.LocalPlayer
+	local lastNumber, isLoopRunning = nil, false
+	local isAfkActive = false  -- Variable to track the AFK state
+	local originalPosition = nil  -- To store the original position
+	
+	-- Define positions
+	local positions = {
+		Vector3.new(-31.7, 20.58, -210.37),
+		Vector3.new(-31.17, 7.02, -240.35),
+		Vector3.new(-47.86, 9.02, -220.04),
+		Vector3.new(-14.78, 5.02, -180.67),
+		Vector3.new(-41.93, 11.02, -197.31)
+	}
+	
+	-- Create parts in the workspace
+	for _, pos in ipairs(positions) do
+		local part = Instance.new("Part")
+		part.Name, part.Size, part.CFrame, part.Anchored, part.Parent = "Dino Nugget", Vector3.new(1, 0.5, 1), CFrame.new(pos), true, workspace
+	end
+	
+	-- Function to set a random CFrame
+	local function setRandomCFrame(hrp)
+		local randomNumber
+		repeat randomNumber = math.random(1, #positions) until randomNumber ~= lastNumber
+		hrp.CFrame, lastNumber = CFrame.new(positions[randomNumber] + Vector3.new(0, 1, 0)), randomNumber
+	end
+	
+	-- Function to start the AFK loop
+	local function startCFrameLoop()
+		if isLoopRunning then return end
+		isLoopRunning = true
+	
+		while isAfkActive do
+			local hrp = (player.Character or player.CharacterAdded:Wait()):WaitForChild("HumanoidRootPart")
+			setRandomCFrame(hrp)
+			wait(0.5)
+		end
+	
+		isLoopRunning = false
+	end
+	
+	-- Toggle function to activate/deactivate AFK
+	local function toggleAfk()
+		if isAfkActive then
+			-- Stop AFK mode and reset position
+			isAfkActive = false
+			if player.Character then
+				local hrp = player.Character:FindFirstChild("HumanoidRootPart")
+				if hrp and originalPosition then
+					hrp.CFrame = originalPosition
+				end
+			end
+		else
+			-- Start AFK mode
+			isAfkActive = true
+			originalPosition = player.Character and player.Character:FindFirstChild("HumanoidRootPart") and player.Character.HumanoidRootPart.CFrame
+			if not isLoopRunning then
+				startCFrameLoop()
+			end
+		end
+	end
+	
+	-- Connect the function to the MouseButton1Click event of the button
+	script.Parent.MouseButton1Click:Connect(toggleAfk)
+	
+end
+coroutine.wrap(BFJA_fake_script)()
+local function JIQKUI_fake_script() -- MainFrame.Drag 
+	local script = Instance.new('Script', MainFrame)
+
+	-- grab script
+	local CAS = game:GetService("ContextActionService")
+	
+	local GrabObject = nil
+	local GrabStart = false
+	local Dragger = nil
+	
+	local player = game.Players.LocalPlayer
+	local character = player.Character
+	local mouse = player:GetMouse()
+	local camera = game.Workspace.CurrentCamera
+	
+	function Grab(actionName, UserInputState, InputObject)
+		if actionName == "Grab" then
+			if UserInputState == Enum.UserInputState.Begin then
+				-- start grab
+				local Magnitude = (mouse.Hit.Position - character.Head.CFrame.Position).magnitude
+				if Magnitude < 10 then
+	
+					if mouse.Target then
+	
+						GrabObject = mouse.Target
+						GrabStart = true
+	
+						local DragBall = createDragBall()
+						DragBall.CFrame = mouse.Hit
+						Dragger = DragBall
+	
+						mouse.TargetFilter = GrabObject
+	
+						local DragBallWeld = weldBetween(DragBall,GrabObject)
+						addMover(DragBall)
+	
+						while Dragger do
+							--Create a ray from the users head to the mouse.
+							local cf = CFrame.new(character.Head.Position, mouse.Hit.Position)
+							Dragger.Mover.Position = (cf + (cf.LookVector * 10)).Position
+							Dragger.RotMover.CFrame = camera.CFrame * CFrame.Angles(Dragger.RotOffset.Value.X,Dragger.RotOffset.Value.Y, Dragger.RotOffset.Value.Z)
+							wait()
+						end
+						mouse.TargetFilter = nil
+					end
+				end
+			elseif UserInputState == Enum.UserInputState.End then
+				-- stop grab
+	
+				GrabObject = nil
+				GrabStart = false
+				if Dragger then
+					Dragger:Destroy()
+					Dragger = nil
+				end
+			end
+		end	
+	end
+	
+	
+	function weldBetween(a, b)
+		local weld = Instance.new("ManualWeld", a)
+		weld.C0 = a.CFrame:inverse() * b.CFrame
+		weld.Part0 = a
+		weld.Part1 = b
+		return weld
+	end
+	
+	
+	function addMover(part)
+		local newMover = Instance.new("BodyPosition")
+		newMover.Parent = part
+		newMover.MaxForce = Vector3.new(40000,40000,40000)
+		newMover.P = 40000
+		newMover.D = 1000
+		newMover.Position = part.Position
+		newMover.Name = "Mover"
+	
+		local newRot = Instance.new("BodyGyro")
+		newRot.Parent = part
+		newRot.MaxTorque = Vector3.new(3000,3000,3000)
+		newRot.P = 3000
+		newRot.D = 500
+		newRot.CFrame = game.Workspace.CurrentCamera.CFrame
+		newRot.Name = "RotMover"
+	
+		local RotOffset = Instance.new("CFrameValue")
+		RotOffset.Name = "RotOffset"
+		RotOffset.Parent = part
+	end
+	
+	
+	function createDragBall()
+		local DragBall = Instance.new("Part")
+		DragBall.BrickColor = BrickColor.new("Electric blue")
+		DragBall.Material = Enum.Material.Wood
+		DragBall.Size = Vector3.new(.2,.2,.2)
+		DragBall.Shape = "Ball"
+		DragBall.Name = "DragBall"
+		DragBall.Parent = workspace
+		return DragBall
+	end
+	
+	
+	CAS:BindAction("Grab", Grab, false, Enum.UserInputType.MouseButton1)
+end
+coroutine.wrap(JIQKUI_fake_script)()
