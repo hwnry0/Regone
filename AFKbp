@@ -1,0 +1,68 @@
+local function createDinoNugget(position)
+    local dinoNugget = Instance.new("Part")
+    dinoNugget.Name = "Dino Nugget"
+    dinoNugget.Size = Vector3.new(1, 0.5, 1)
+    dinoNugget.Position = position
+    dinoNugget.Anchored = true
+    dinoNugget.CanCollide = true
+    dinoNugget.Parent = game.Workspace
+end
+
+createDinoNugget(Vector3.new(-23.25, 9.69, -221.39))
+createDinoNugget(Vector3.new(-34.177, 11.69, -199.35))
+createDinoNugget(Vector3.new(-45.07, 14.02, -180.15))
+createDinoNugget(Vector3.new(-45.07, 6.02, -240.28))
+createDinoNugget(Vector3.new(-13.07, 9.02, -234.28))
+createDinoNugget(Vector3.new(-19.07, 10.02, -194.63))
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+local positions = {
+    CFrame.new(-23.25, 10.69, -221.39),
+    CFrame.new(-34.177, 12.69, -199.35),
+    CFrame.new(-45.07, 15.02, -180.15),
+    CFrame.new(-45.07, 7.02, -240.28),
+    CFrame.new(-13.07, 10.02, -234.28),
+    CFrame.new(-19.07, 11.02, -194.63)
+}
+
+local numbers = {1, 2, 3, 4, 5, 6}
+local usedNumbers = {}
+
+local scriptRunning = Instance.new("BoolValue")
+scriptRunning.Name = "ScriptRunning"
+scriptRunning.Value = false
+scriptRunning.Parent = player:WaitForChild("PlayerGui")
+
+local function pickNumber()
+    if #numbers == 0 then
+        numbers = usedNumbers
+        usedNumbers = {}
+    end
+    local randomIndex = math.random(1, #numbers)
+    local chosenNumber = table.remove(numbers, randomIndex)
+    table.insert(usedNumbers, chosenNumber)
+    humanoidRootPart.CFrame = positions[chosenNumber]
+end
+
+local function startScript()
+    if not scriptRunning.Value then
+        scriptRunning.Value = true
+        while true do
+            pickNumber()
+            wait(0.5)
+        end
+        scriptRunning.Value = false
+    end
+end
+
+local function onCharacterAdded(newCharacter)
+    humanoidRootPart = newCharacter:WaitForChild("HumanoidRootPart")
+    startScript()
+end
+
+player.CharacterAdded:Connect(onCharacterAdded)
+if player.Character then onCharacterAdded(player.Character) end
