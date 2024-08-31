@@ -1,24 +1,25 @@
--- Gui to farts
+-- Gui to Lua
 -- Version: 3.2
 
 -- Instances:
 
 local MainGUI = Instance.new("ScreenGui")
+local Drag = Instance.new("Frame")
 local MainFrame = Instance.new("Frame")
-local UICorner = Instance.new("UICorner")
 local antlerCase = Instance.new("TextButton")
-local UICorner_2 = Instance.new("UICorner")
+local UICorner = Instance.new("UICorner")
 local KnifeCase = Instance.new("TextButton")
-local UICorner_3 = Instance.new("UICorner")
+local UICorner_2 = Instance.new("UICorner")
 local ChairCase = Instance.new("TextButton")
-local UICorner_4 = Instance.new("UICorner")
+local UICorner_3 = Instance.new("UICorner")
 local CoinMulti = Instance.new("TextButton")
-local UICorner_5 = Instance.new("UICorner")
+local UICorner_4 = Instance.new("UICorner")
 local Afker = Instance.new("TextButton")
-local UICorner_6 = Instance.new("UICorner")
-local TextLabel = Instance.new("TextLabel")
+local UICorner_5 = Instance.new("UICorner")
 local otherGUI = Instance.new("TextButton")
-local UICorner_7 = Instance.new("UICorner")
+local UICorner_6 = Instance.new("UICorner")
+local Frame = Instance.new("Frame")
+local Name = Instance.new("TextLabel")
 
 --Properties:
 
@@ -27,16 +28,19 @@ MainGUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 MainGUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 MainGUI.ResetOnSpawn = false
 
-MainFrame.Name = "MainFrame"
-MainFrame.Parent = MainGUI
-MainFrame.BackgroundColor3 = Color3.fromRGB(87, 87, 87)
-MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-MainFrame.BorderSizePixel = 0
-MainFrame.Position = UDim2.new(0.748745441, 0, 0.0222026445, 0)
-MainFrame.Size = UDim2.new(0, 98, 0, 237)
+Drag.Name = "Drag"
+Drag.Parent = MainGUI
+Drag.BackgroundColor3 = Color3.fromRGB(87, 87, 87)
+Drag.BorderColor3 = Color3.fromRGB(85, 0, 127)
+Drag.Position = UDim2.new(0.743156493, 0, 0.239619374, 1)
+Drag.Size = UDim2.new(0, 98, 0, 21)
 
-UICorner.CornerRadius = UDim.new(0, 3)
-UICorner.Parent = MainFrame
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = Drag
+MainFrame.BackgroundColor3 = Color3.fromRGB(87, 87, 87)
+MainFrame.BorderColor3 = Color3.fromRGB(85, 0, 127)
+MainFrame.Position = UDim2.new(0, 0, 0.643666565, 0)
+MainFrame.Size = UDim2.new(0, 98, 0, 237)
 
 antlerCase.Name = "antlerCase"
 antlerCase.Parent = MainFrame
@@ -50,8 +54,8 @@ antlerCase.Text = "Ribbon case"
 antlerCase.TextColor3 = Color3.fromRGB(247, 247, 247)
 antlerCase.TextSize = 14.000
 
-UICorner_2.CornerRadius = UDim.new(0, 3)
-UICorner_2.Parent = antlerCase
+UICorner.CornerRadius = UDim.new(0, 3)
+UICorner.Parent = antlerCase
 
 KnifeCase.Name = "KnifeCase"
 KnifeCase.Parent = MainFrame
@@ -65,8 +69,8 @@ KnifeCase.Text = "Crown knife"
 KnifeCase.TextColor3 = Color3.fromRGB(247, 247, 247)
 KnifeCase.TextSize = 14.000
 
-UICorner_3.CornerRadius = UDim.new(0, 3)
-UICorner_3.Parent = KnifeCase
+UICorner_2.CornerRadius = UDim.new(0, 3)
+UICorner_2.Parent = KnifeCase
 
 ChairCase.Name = "ChairCase"
 ChairCase.Parent = MainFrame
@@ -80,8 +84,8 @@ ChairCase.Text = "Red chair"
 ChairCase.TextColor3 = Color3.fromRGB(247, 247, 247)
 ChairCase.TextSize = 14.000
 
-UICorner_4.CornerRadius = UDim.new(0, 3)
-UICorner_4.Parent = ChairCase
+UICorner_3.CornerRadius = UDim.new(0, 3)
+UICorner_3.Parent = ChairCase
 
 CoinMulti.Name = "CoinMulti"
 CoinMulti.Parent = MainFrame
@@ -95,8 +99,8 @@ CoinMulti.Text = "Coin/gun hack"
 CoinMulti.TextColor3 = Color3.fromRGB(247, 247, 247)
 CoinMulti.TextSize = 12.000
 
-UICorner_5.CornerRadius = UDim.new(0, 3)
-UICorner_5.Parent = CoinMulti
+UICorner_4.CornerRadius = UDim.new(0, 3)
+UICorner_4.Parent = CoinMulti
 
 Afker.Name = "Afker"
 Afker.Parent = MainFrame
@@ -110,22 +114,8 @@ Afker.Text = "Afk"
 Afker.TextColor3 = Color3.fromRGB(247, 247, 247)
 Afker.TextSize = 14.000
 
-UICorner_6.CornerRadius = UDim.new(0, 3)
-UICorner_6.Parent = Afker
-
-TextLabel.Parent = MainFrame
-TextLabel.BackgroundColor3 = Color3.fromRGB(247, 247, 247)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0.0408150814, 0, 0, 0)
-TextLabel.Size = UDim2.new(0, 89, 0, 26)
-TextLabel.Font = Enum.Font.FredokaOne
-TextLabel.Text = "hwnrys bp"
-TextLabel.TextColor3 = Color3.fromRGB(215, 215, 215)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
+UICorner_5.CornerRadius = UDim.new(0, 3)
+UICorner_5.Parent = Afker
 
 otherGUI.Name = "otherGUI"
 otherGUI.Parent = MainFrame
@@ -135,20 +125,42 @@ otherGUI.BorderSizePixel = 0
 otherGUI.Position = UDim2.new(0.0920000002, 0, 0.100000001, 0)
 otherGUI.Size = UDim2.new(0, 80, 0, 29)
 otherGUI.Font = Enum.Font.Arial
-otherGUI.Text = "other GUI"
+otherGUI.Text = "Aimbot"
 otherGUI.TextColor3 = Color3.fromRGB(247, 247, 247)
 otherGUI.TextSize = 14.000
 
-UICorner_7.CornerRadius = UDim.new(0, 3)
-UICorner_7.Parent = otherGUI
+UICorner_6.CornerRadius = UDim.new(0, 3)
+UICorner_6.Parent = otherGUI
+
+Frame.Parent = MainFrame
+Frame.BackgroundColor3 = Color3.fromRGB(87, 87, 87)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0, 0, -0.00499999989, 0)
+Frame.Size = UDim2.new(0, 98, 0, 5)
+
+Name.Name = "Name"
+Name.Parent = Frame
+Name.BackgroundColor3 = Color3.fromRGB(247, 247, 247)
+Name.BackgroundTransparency = 1.000
+Name.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Name.BorderSizePixel = 0
+Name.Position = UDim2.new(0.0410000011, 0, -1.00999999, 0)
+Name.Size = UDim2.new(0, 89, 0, 24)
+Name.Font = Enum.Font.FredokaOne
+Name.Text = "hwnrys bp"
+Name.TextColor3 = Color3.fromRGB(215, 215, 215)
+Name.TextScaled = true
+Name.TextSize = 14.000
+Name.TextWrapped = true
 
 -- Scripts:
 
-local function CFAWV_fake_script() -- antlerCase.Antler script 
+local function OYWLORZ_fake_script() -- antlerCase.Antler script 
 	local script = Instance.new('Script', antlerCase)
 
 	local lastPressed = 0
-	local cooldown = 60 -- Cooldown in seconds (1 minute and 30 seconds)
+	local cooldown = 30
 	
 	local function Ribbon()
 		local currentTime = tick()
@@ -164,14 +176,13 @@ local function CFAWV_fake_script() -- antlerCase.Antler script
 	end
 	
 	script.Parent.MouseButton1Click:Connect(Ribbon)
-	
 end
-coroutine.wrap(CFAWV_fake_script)()
-local function BQZQTT_fake_script() -- KnifeCase.KnifeScript 
+coroutine.wrap(OYWLORZ_fake_script)()
+local function CEGDFLH_fake_script() -- KnifeCase.KnifeScript 
 	local script = Instance.new('Script', KnifeCase)
 
 	local lastPressed = 0
-	local cooldown = 60 -- Cooldown in seconds (1 minute and 30 seconds)
+	local cooldown = 30 
 	
 	local function Knife()
 		local currentTime = tick()
@@ -189,12 +200,12 @@ local function BQZQTT_fake_script() -- KnifeCase.KnifeScript
 	script.Parent.MouseButton1Click:Connect(Knife)
 	
 end
-coroutine.wrap(BQZQTT_fake_script)()
-local function IYJEXNY_fake_script() -- ChairCase.ChairScript 
+coroutine.wrap(CEGDFLH_fake_script)()
+local function YYIDI_fake_script() -- ChairCase.ChairScript 
 	local script = Instance.new('Script', ChairCase)
 
 	local lastPressed = 0
-	local cooldown = 60 -- Cooldown in seconds (1 minute and 30 seconds)
+	local cooldown = 30 
 	
 	local function Chair()
 		local currentTime = tick()
@@ -212,8 +223,8 @@ local function IYJEXNY_fake_script() -- ChairCase.ChairScript
 	script.Parent.MouseButton1Click:Connect(Chair)
 	
 end
-coroutine.wrap(IYJEXNY_fake_script)()
-local function RKIO_fake_script() -- CoinMulti.CoinScript 
+coroutine.wrap(YYIDI_fake_script)()
+local function NIGTC_fake_script() -- CoinMulti.CoinScript 
 	local script = Instance.new('Script', CoinMulti)
 
 	local function CoinMaster()
@@ -231,222 +242,88 @@ local function RKIO_fake_script() -- CoinMulti.CoinScript
 	
 	script.Parent.MouseButton1Click:Connect(CoinMaster)
 end
-coroutine.wrap(RKIO_fake_script)()
-local function KTEQT_fake_script() -- Afker.AfkScript 
+coroutine.wrap(NIGTC_fake_script)()
+local function OQKWNT_fake_script() -- Afker.Afka 
 	local script = Instance.new('Script', Afker)
 
-	-- Services
-	local Players = game:GetService("Players")
-	local RunService = game:GetService("RunService")
-	
-	-- Variables
-	local player = Players.LocalPlayer
-	local isLoopRunning = false
-	local loopRunning = false
-	
-	-- Function to create Dino Nuggets
 	local function createDinoNugget(position)
-		local part = Instance.new("Part")
-		part.Name = "Dino Nugget"
-		part.Size = Vector3.new(1, 0.5, 1)
-		part.CFrame = CFrame.new(position)
-		part.Anchored = true
-		part.Parent = workspace
+		local dinoNugget = Instance.new("Part")
+		dinoNugget.Name = "Dino Nugget"
+		dinoNugget.Size = Vector3.new(1, 0.5, 1)
+		dinoNugget.Position = position
+		dinoNugget.Anchored = true
+		dinoNugget.CanCollide = true
+		dinoNugget.Parent = game.Workspace
 	end
 	
-	-- Create Dino Nuggets at specified positions
-	createDinoNugget(Vector3.new(-31.7, 20.58, -210.37))
-	createDinoNugget(Vector3.new(-31.17, 7.02, -240.35))
-	createDinoNugget(Vector3.new(-47.86, 9.02, -220.04))
-	createDinoNugget(Vector3.new(-14.78, 5.02, -180.67))
-	createDinoNugget(Vector3.new(-41.93, 11.02, -197.31))
+	local function Afking()
 	
-	-- Function to set random CFrame
-	local function setRandomCFrame(humanoidRootPart)
-		local randomNumber
-		repeat
-			randomNumber = math.random(1, 5)
-		until randomNumber ~= lastNumber
+	createDinoNugget(Vector3.new(-23.25, 11.69, -221.39))
+	createDinoNugget(Vector3.new(-34.177, 13.69, -199.35))
+	createDinoNugget(Vector3.new(-45.07, 16.02, -180.15))
+	createDinoNugget(Vector3.new(-45.07, 8.02, -240.28))
+	createDinoNugget(Vector3.new(-13.07, 11.02, -234.28))
+	createDinoNugget(Vector3.new(-19.07, 12.02, -194.63))
+	createDinoNugget(Vector3.new(-15.12, 12.02, -205.24))
 	
-		if randomNumber == 1 then
-			humanoidRootPart.CFrame = CFrame.new(-31.7, 21.58, -210.37)
-		elseif randomNumber == 2 then
-			humanoidRootPart.CFrame = CFrame.new(-31.17, 8.02, -240.35)
-		elseif randomNumber == 3 then
-			humanoidRootPart.CFrame = CFrame.new(-47.86, 10.02, -220.04)
-		elseif randomNumber == 4 then
-			humanoidRootPart.CFrame = CFrame.new(-14.78, 6.02, -180.67)
-		elseif randomNumber == 5 then
-			humanoidRootPart.CFrame = CFrame.new(-41.93, 12.02, -197.31)
+	local Players = game:GetService("Players")
+	local player = Players.LocalPlayer
+	local character = player.Character or player.CharacterAdded:Wait()
+	local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+	
+	local positions = {
+		CFrame.new(-23.25, 13.69, -221.39),
+		CFrame.new(-34.177, 14.69, -199.35),
+		CFrame.new(-45.07, 17.02, -180.15),
+		CFrame.new(-45.07, 9.02, -240.28),
+		CFrame.new(-13.07, 12.02, -234.28),
+		CFrame.new(-19.07, 13.02, -194.63),
+		CFrame.new(-15.12, 13.02, -205.24)
+	}
+	
+	local numbers = {1, 2, 3, 4, 5, 6, 7}
+	local usedNumbers = {}
+	
+	local scriptRunning = Instance.new("BoolValue")
+	scriptRunning.Name = "ScriptRunning"
+	scriptRunning.Value = false
+	scriptRunning.Parent = player:WaitForChild("PlayerGui")
+	
+	local function pickNumber()
+		if #numbers == 0 then
+			numbers = usedNumbers
+			usedNumbers = {}
 		end
-	
-		lastNumber = randomNumber
+		local randomIndex = math.random(1, #numbers)
+		local chosenNumber = table.remove(numbers, randomIndex)
+		table.insert(usedNumbers, chosenNumber)
+		humanoidRootPart.CFrame = positions[chosenNumber]
 	end
 	
-	-- Function to start the CFrame loop
-	local function startCFrameLoop()
-		if isLoopRunning then return end
-		isLoopRunning = true
-		loopRunning = true
-	
-		while loopRunning do
-			local character = player.Character or player.CharacterAdded:Wait()
-			local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
-			setRandomCFrame(humanoidRootPart)
-			wait(0.5)
-		end
-	end
-	
-	-- Function to stop the CFrame loop
-	local function stopCFrameLoop()
-		loopRunning = false
-		isLoopRunning = false
-	end
-	
-	-- Function to check and restart the loop every 30 seconds
-	local function monitorLoop()
-		while true do
-			wait(30)
-			if not isLoopRunning then
-				startCFrameLoop()
+	local function startScript()
+		if not scriptRunning.Value then
+			scriptRunning.Value = true
+			while true do
+				pickNumber()
+				wait(0.3)
 			end
+			scriptRunning.Value = false
 		end
 	end
 	
-	-- Create AFK button
-	local afkButton = Instance.new("TextButton")
-	afkButton.Name = "AFKbutton"
-	afkButton.Size = UDim2.new(0, 200, 0, 50)
-	afkButton.Position = UDim2.new(0.5, -100, 0.5, -25)
-	afkButton.Text = "Start CFrame Loop"
-	afkButton.Parent = player.PlayerGui
+	local function onCharacterAdded(newCharacter)
+		humanoidRootPart = newCharacter:WaitForChild("HumanoidRootPart")
+		startScript()
+	end
 	
-	script.Parent.MouseButton1Click:Connect(function()
-		if not isLoopRunning then
-			startCFrameLoop()
-		end
-	end)
+	player.CharacterAdded:Connect(onCharacterAdded)
+	if player.Character then onCharacterAdded(player.Character) end
+	end
 	
-	-- Monitor and restart the loop if necessary
-	RunService.Heartbeat:Connect(function()
-		if not loopRunning and isLoopRunning then
-			stopCFrameLoop()
-		end
-	end)
-	
-	-- Start the monitor function
-	spawn(monitorLoop)
-	
+	script.Parent.MouseButton1Click:Connect(Afking)
 end
-coroutine.wrap(KTEQT_fake_script)()
-local function XBNTRUW_fake_script() -- MainFrame.Drag 
-	local script = Instance.new('Script', MainFrame)
-
-	-- grab script
-	local CAS = game:GetService("ContextActionService")
-	
-	local GrabObject = nil
-	local GrabStart = false
-	local Dragger = nil
-	
-	local player = game.Players.LocalPlayer
-	local character = player.Character
-	local mouse = player:GetMouse()
-	local camera = game.Workspace.CurrentCamera
-	
-	function Grab(actionName, UserInputState, InputObject)
-		if actionName == "Grab" then
-			if UserInputState == Enum.UserInputState.Begin then
-				-- start grab
-				local Magnitude = (mouse.Hit.Position - character.Head.CFrame.Position).magnitude
-				if Magnitude < 10 then
-	
-					if mouse.Target then
-	
-						GrabObject = mouse.Target
-						GrabStart = true
-	
-						local DragBall = createDragBall()
-						DragBall.CFrame = mouse.Hit
-						Dragger = DragBall
-	
-						mouse.TargetFilter = GrabObject
-	
-						local DragBallWeld = weldBetween(DragBall,GrabObject)
-						addMover(DragBall)
-	
-						while Dragger do
-							--Create a ray from the users head to the mouse.
-							local cf = CFrame.new(character.Head.Position, mouse.Hit.Position)
-							Dragger.Mover.Position = (cf + (cf.LookVector * 10)).Position
-							Dragger.RotMover.CFrame = camera.CFrame * CFrame.Angles(Dragger.RotOffset.Value.X,Dragger.RotOffset.Value.Y, Dragger.RotOffset.Value.Z)
-							wait()
-						end
-						mouse.TargetFilter = nil
-					end
-				end
-			elseif UserInputState == Enum.UserInputState.End then
-				-- stop grab
-	
-				GrabObject = nil
-				GrabStart = false
-				if Dragger then
-					Dragger:Destroy()
-					Dragger = nil
-				end
-			end
-		end	
-	end
-	
-	
-	function weldBetween(a, b)
-		local weld = Instance.new("ManualWeld", a)
-		weld.C0 = a.CFrame:inverse() * b.CFrame
-		weld.Part0 = a
-		weld.Part1 = b
-		return weld
-	end
-	
-	
-	function addMover(part)
-		local newMover = Instance.new("BodyPosition")
-		newMover.Parent = part
-		newMover.MaxForce = Vector3.new(40000,40000,40000)
-		newMover.P = 40000
-		newMover.D = 1000
-		newMover.Position = part.Position
-		newMover.Name = "Mover"
-	
-		local newRot = Instance.new("BodyGyro")
-		newRot.Parent = part
-		newRot.MaxTorque = Vector3.new(3000,3000,3000)
-		newRot.P = 3000
-		newRot.D = 500
-		newRot.CFrame = game.Workspace.CurrentCamera.CFrame
-		newRot.Name = "RotMover"
-	
-		local RotOffset = Instance.new("CFrameValue")
-		RotOffset.Name = "RotOffset"
-		RotOffset.Parent = part
-	end
-	
-	
-	function createDragBall()
-		local DragBall = Instance.new("Part")
-		DragBall.BrickColor = BrickColor.new("Electric blue")
-		DragBall.Material = Enum.Material.Wood
-		DragBall.Size = Vector3.new(.2,.2,.2)
-		DragBall.Shape = "Ball"
-		DragBall.Name = "DragBall"
-		DragBall.Parent = workspace
-		return DragBall
-	end
-	
-	
-	CAS:BindAction("Grab", Grab, false, Enum.UserInputType.MouseButton1)
-end
-coroutine.wrap(XBNTRUW_fake_script)()
-local function OCCYKK_fake_script() -- otherGUI.Antler script 
+coroutine.wrap(OQKWNT_fake_script)()
+local function XQASGVO_fake_script() -- otherGUI.GUIscripta 
 	local script = Instance.new('Script', otherGUI)
 
 	local function GUI2()
@@ -456,4 +333,48 @@ local function OCCYKK_fake_script() -- otherGUI.Antler script
 	script.Parent.MouseButton1Click:Connect(GUI2)
 	
 end
-coroutine.wrap(OCCYKK_fake_script)()
+coroutine.wrap(XQASGVO_fake_script)()
+local function IKCE_fake_script() -- MainFrame.DragScript 
+	local script = Instance.new('Script', MainFrame)
+
+	local Drag = script.Parent.Parent
+	gsCoreGui = game:GetService("CoreGui")
+	gsTween = game:GetService("TweenService")
+	local UserInputService = game:GetService("UserInputService")
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	local function update(input)
+		local delta = input.Position - dragStart
+		local dragTime = 0.04
+		local SmoothDrag = {}
+		SmoothDrag.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		local dragSmoothFunction = gsTween:Create(Drag, TweenInfo.new(dragTime, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), SmoothDrag)
+		dragSmoothFunction:Play()
+	end
+	Drag.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = Drag.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	Drag.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging and Drag.Size then
+			update(input)
+		end
+	end)
+	
+end
+coroutine.wrap(IKCE_fake_script)()
